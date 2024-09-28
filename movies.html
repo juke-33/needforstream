@@ -1,0 +1,1706 @@
+<html>
+<head>
+    <title>
+        Need For Stream - Movies
+    </title>
+    <link rel="icon" href="/photos/needforstream2.png" type="image/x-icon">
+	<meta charset="UTF-8">
+	<meta name="description" content="Movies">
+    <meta property="og:title" content="Need For Stream - Movies">
+    <meta property="og:description" content="Movies">
+    <meta property="og:image" content="https://needforstream.xyz/photos/needforstream3.png">
+    <meta property="og:url" content="https://needforstream.xyz/movies.html">
+    <meta property="og:type" content="website">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script src="/styles/disable.js"></script>
+	<script src="/styles/search.js"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="/styles/nav.css">
+	<link rel="stylesheet" href="/styles/search.css">
+	<link rel="stylesheet" href="/styles/movies.css">
+
+<style>
+    /* Header Fonts */
+    @font-face {
+        font-family: 'HeaderFont1';
+        src: url('font1.otf') format('opentype');
+    }
+
+    /* Style that applies to the whole code */
+    * {
+        margin: 0;
+        text-decoration: none;
+        box-sizing: border-box;
+        font-weight: bold;
+        background: #2c3e50;
+    }
+    body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont
+            , 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans'
+            , 'Helvetica Neue', sans-serif;
+    }
+
+	img.image-container {
+		background-color: rgb(25, 108, 217);
+	}
+</style>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <a href="https://needforstream.xyz/">
+        	<label class="menu">
+				<img class="image-container" src="/photos/nfs.png" width="430">
+			</label>
+		</a>
+        <ul class="menu-list">
+            <li> 
+                <a href="home.html"> Home </a>
+            </li>
+            <li> 
+                <a href="sports.html"> Sports </a>
+            </li>
+            <li> 
+                <a href="movies.html"> Movies </a>
+            </li>
+			<li> 
+                <a href="/hidden/secret.html"> Cookie </a>
+            </li>
+        </ul>
+    </nav><br>
+	
+	<div class="search-items">
+		<input type="text" id="movieSearch" placeholder="Type the name of a movie...">
+		<button onclick="searchMovies()"><i class="fas fa-search"></i> Search</button><br>
+	</div>
+    <div id="movie-list-id">
+        <div id="categories-wrapper">
+            <ul class="categories" id="categories">
+                <li><a href="#" data-category="all">Movies</a></li>
+				<li><a href="#" data-category="series">Series</a></li>
+				<li><a href="#" data-category="trending"><i class="fas fa-fire"></i> Trending</a></li>
+				<li><a href="https://www.imdb.com/"><i class="fab fa-imdb"></i> IMDb</a></li>
+				<div class="dropdown">
+					<li><a href="#" data-category="all"> SELECT CATEGORY <i class="fas fa-arrow-down"></i></a></li>
+						<div class="dropdown-content">
+							<li><a href="#" data-category="action">Action</a></li>
+							<li><a href="#" data-category="adventure">Adventure</a></li>
+							<li><a href="#" data-category="animation">Animation</a></li>
+							<li><a href="#" data-category="biography">Biography</a></li>
+							<li><a href="#" data-category="comedy">Comedy</a></li>
+							<li><a href="#" data-category="crime">Crime</a></li>
+							<li><a href="#" data-category="documentary">Documentary</a></li>
+							<li><a href="#" data-category="drama">Drama</a></li>
+							<li><a href="#" data-category="family">Family</a></li>
+							<li><a href="#" data-category="fantasy">Fantasy</a></li>
+							<li><a href="#" data-category="history">History</a></li>
+							<li><a href="#" data-category="horror">Horror</a></li>
+							<li><a href="#" data-category="mystery">Mystery</a></li>
+							<li><a href="#" data-category="romance">Romance</a></li>
+							<li><a href="#" data-category="sci-fi">Sci-Fi</a></li>
+							<li><a href="#" data-category="sport">Sport</a></li>
+							<li><a href="#" data-category="thriller">Thriller</a></li>
+						</div>
+				</div>
+            </ul>
+        </div><br>
+        <div id="movie-list-container">
+            <ul class="movie-list" id="movies">
+				<li data-categories="trending,horror" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt31434046" class="movie-link">
+							<div class="image-container">
+								<img src="https://www.options-cinemas.gr/images/styles/medium/POSTER-1.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Μην ανοίγεις την πόρτα (2024)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Μην ανοίγει...</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 6.7</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">87 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Horror</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="animation,comedy,family" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt5779228" class="movie-link">
+							<div class="image-container">
+								<img src="https://i0.wp.com/image.tmdb.org/t/p/w500/zK2sFxZcelHJRPVr242rxy5VK4T.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>The Garfield Movie (2024)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">The Garfiel...</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 6.5</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">101 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Animation, Comedy, Family</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="trending,comedy,crime" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt20215968" class="movie-link">
+							<div class="image-container">
+								<img src="https://i0.wp.com/image.tmdb.org/t/p/w500/14F4G4bmKMeH5snf7R38c8ojmxr.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Hit Man (2024)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Hit Man</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.0</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">115 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Comedy, Crime</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="trending,action,adventure,sci-fi" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt14539740" class="movie-link">
+							<div class="image-container">
+								<img src="https://i0.wp.com/image.tmdb.org/t/p/w500/z1p34vh7dEOnLDmyCrlUVLuoDzd.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Godzilla x Kong: The New Empire (2024)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Godzilla x Ko...</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 7.2</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">115 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Action, Adventure, Sci-Fi</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="trending,adventure,animation,comedy,drama,family" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt22022452" class="movie-link">
+							<div class="image-container">
+								<img src="https://i0.wp.com/image.tmdb.org/t/p/w500/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Inside Out 2 (2024)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Inside Out 2</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 7.1</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">97 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Adventure, Animation, Comedy, Drama, Family</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="horror,thriller" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt14088510" class="movie-link">
+							<div class="image-container">
+								<img src="https://i0.wp.com/image.tmdb.org/t/p/w500/gAEUXC37vl1SnM7PXsHTF23I2vq.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Tarot (2024)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Tarot</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 5.9</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">92 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Horror, Thriller</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="trending,horror" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt5672290" class="movie-link">
+							<div class="image-container">
+								<img src="https://i0.wp.com/image.tmdb.org/t/p/w500/cIzk6GhxEZuweekGFXWEoAyuaMX.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>The First Omen (2024)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">The First Omen</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 6.6</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">119 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Horror</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="trending,horror,mystery,thriller" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt23137390" class="movie-link">
+							<div class="image-container">
+								<img src="https://i0.wp.com/image.tmdb.org/t/p/w500/fdZpvODTX5wwkD0ikZNaClE4AoW.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Immaculate (2024)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Immaculate</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 6.2</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">89 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Horror, Mystery, Thriller</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="drama,action" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt17279496" class="movie-link">
+							<div class="image-container">
+								<img src="https://i0.wp.com/image.tmdb.org/t/p/w500/sh7Rg8Er3tFcN9BpKIPOMvALgZd.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Civil War (2024)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Civil War</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 7.3</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">109 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Drama, Action</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="trending,drama,action,adventure" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt15239678" class="movie-link">
+							<div class="image-container">
+								<img src="https://on.fmoviesto.site/_sf/301/36150347.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Dune: Part Two (2024)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Dune: Part Two</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.1</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">167 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Drama, Action, Adventure</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="drama,action" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt11581174" class="movie-link">
+							<div class="image-container">
+								<img src="https://on.fmoviesto.site/_sf/305/12105377.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Karnan (2021)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Karnan</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.0</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2021</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">152 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Drama, Action</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="horror" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt27130480" class="movie-link">
+							<div class="image-container">
+								<img src="https://on.fmoviesto.site/_sf/305/50793643.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Island of the Dolls 2 (2023)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Island of th...</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 4.9</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">82 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Horror</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="drama,action" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt9477520" class="movie-link">
+							<div class="image-container">
+								<img src="https://on.fmoviesto.site/_sf/305/31503129.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Asuran (2019)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Asuran</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.4</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2019</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">141 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Drama, Action</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="comedy" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt21270966" class="movie-link">
+							<div class="image-container">
+								<img src="https://on.fmoviesto.site/_sf/302/75086869.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Scrambled (2023)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Scrambled</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 6.8</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">97 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Comedy</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="drama,sci-fi,thriller" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt14637386" class="movie-link">
+							<div class="image-container">
+								<img src="https://on.fmoviesto.site/_sf/302/93735891.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Parallel (2024)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Parallel</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 5.9</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">88 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Drama, Sci-Fi, Thriller</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="thriller,action" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt28074691" class="movie-link">
+							<div class="image-container">
+								<img src="https://on.fmoviesto.site/_sf/302/06632134.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Eagle (2024)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Eagle</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 7.6</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">156 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Thriller, Action</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="trending,horror" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt20864606" class="movie-link">
+							<div class="image-container">
+								<img src="https://on.fmoviesto.site/_sf/302/05838294.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Camp Pleasant Lake (2024)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Camp Pleasa...</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.1</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">90 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Horror</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="documentary,sport" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt30895834" class="movie-link">
+							<div class="image-container">
+								<img src="https://on.fmoviesto.site/_sf/301/87189927.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Giannis: The Marvelous Journey (2024)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Giannis: The ...</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.5</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">109 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Documentary, Sport</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="series,comedy,crime,family" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="/Series/Wednesday/Season1.html" class="movie-link">
+                        <div class="image-container">
+							<img src="https://on.fmoviesto.site/_sf/251/57047432.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Wednesday - Season 1 (2022)</p>
+                    </a>
+						<div class="tooltip">
+							<span style="text-align: left;">Wednesday</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.2</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2022</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">45 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Comedy, Crime, Family</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="series,drama,action,adventure" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="/Series/HouseOfTheDragon/Season1.html" class="movie-link">
+                        <div class="image-container">
+							<img src="https://on.fmoviesto.site/_sf/240/65297424.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>House of the Dragon - Season 1 (2022)</p>
+                    </a>
+						<div class="tooltip">
+							<span style="text-align: left;">House of the ...</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 7.4</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2022</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">60 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Drama, Action, Adventure</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="series,drama,action,adventure" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="/Series/TheLastOfUs/Season1.html" class="movie-link">
+                        <div class="image-container">
+							<img src="https://on.fmoviesto.site/_sf/256/49764750.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>The Last of Us - Season 1 (2023)</p>
+                    </a>
+						<div class="tooltip">
+							<span style="text-align: left;">The Last of Us</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 9.5</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">55 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Drama, Action, Adventure</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="action,thriller" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt15009428" class="movie-link">
+							<div class="image-container">
+								<img src="https://on.fmoviesto.site/_sf/299/81312852.jpg">
+								<span class="hd-text">CAM</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Argylle (2024)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Argylle</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 6.0</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">139 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Thriller, Action</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="series,crime,mystery,drama" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="/Series/TrueDetective/Season4.html" class="movie-link">
+                        <div class="image-container">
+							<img src="https://on.fmoviesto.site/_sf/298/44280949.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>True Detective - Season 4 (2024)</p>
+                    </a>
+						<div class="tooltip">
+							<span style="text-align: left;">True Detective</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.9</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">60 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Crime, Drama, Mystery</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="series,crime,mystery,drama" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="/Series/TrueDetective/Season3.html" class="movie-link">
+                        <div class="image-container">
+							<img src="https://on.fmoviesto.site/_sf/162/86186470.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>True Detective - Season 3 (2019)</p>
+                    </a>
+						<div class="tooltip">
+							<span style="text-align: left;">True Detective</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.9</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2019</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">60 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Crime, Drama, Mystery</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="series,crime,mystery,drama" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="/Series/TrueDetective/Season2.html" class="movie-link">
+                        <div class="image-container">
+							<img src="https://on.fmoviesto.site/_sf/162/86186470.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>True Detective - Season 2 (2015)</p>
+                    </a>
+						<div class="tooltip">
+							<span style="text-align: left;">True Detective</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.9</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2015</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">60 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Crime, Drama, Mystery</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="series,crime,mystery,drama" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="/Series/TrueDetective/Season1.html" class="movie-link">
+                        <div class="image-container">
+							<img src="https://on.fmoviesto.site/_sf/162/86186470.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>True Detective - Season 1 (2014)</p>
+                    </a>
+						<div class="tooltip">
+							<span style="text-align: left;">True Detective</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.9</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2014</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">60 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Crime, Drama, Mystery</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="action,thriller" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt15314262" class="movie-link">
+							<div class="image-container">
+								<img src="https://on.fmoviesto.site/_sf/297/19584732.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>The Beekeeper (2023)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">The Beekeeper</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 7.3</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">105 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Action, Thriller</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="romance" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt3468380" class="movie-link">
+							<div class="image-container">
+								<img src="https://on.fmoviesto.site/_sf/299/42331472.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Which Brings Me to You (2023)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Which Brings ...</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 6.2</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">98 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Romance</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="action,animation,adventure" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt5834410" class="movie-link">
+							<div class="image-container">
+								<img src="https://on.fmoviesto.site/_sf/299/18276446.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>The Tiger's Apprentice (2024)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">The Tiger's A...</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 7.2</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">99 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Animation, Action, Adventure</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="comedy,animation,adventure" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt28066777" class="movie-link">
+							<div class="image-container">
+								<img src="https://on.fmoviesto.site/_sf/299/60420056.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Orion and the Dark (2024)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Orion and t...</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.0</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">93 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Comedy, Animation, Adventure</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="drama,biography" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt23849204" class="movie-link">
+							<div class="image-container">
+								<img src="https://web.fmoviesto.site/_sf/296/92411347.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>12th Fail (2023)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">12th Fail</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 9.2</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">146 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Drama, Biography</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="romance,sci-fi" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt14230458" class="movie-link">
+							<div class="image-container">
+								<img src="https://web.fmoviesto.site/_sf/294/59826260.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Poor Things (2023)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Poor Things</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.5</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">141 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Romance, Sci-Fi</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="drama,history,adventure" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt16277242" class="movie-link">
+							<div class="image-container">
+								<img src="https://web.fmoviesto.site/_sf/297/91279374.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Society of the Snow (2023)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Society of th...</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 7.7</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">144 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Drama, History, Adventure</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="crime,thriller" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt19227682" class="movie-link">
+							<div class="image-container">
+								<img src="https://web.fmoviesto.site/_sf/297/78974563.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Cinnamon (2023)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Cinnamon</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 7.1</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">91 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Crime, Thriller</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="drama,action,biography" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt10295212" class="movie-link">
+							<div class="image-container">
+								<img src="https://web.fmoviesto.site/_sf/297/21360212.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Shershaah (2021)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Shershaah</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.3</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2021</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">135 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Drama, Action, Biography</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="drama" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt22964884" class="movie-link">
+							<div class="image-container">
+								<img src="https://web.fmoviesto.site/_sf/296/78182019.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Upon Entry (2023)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Upon Entry</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 7.1</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">74 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Drama</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="drama,mystery,thriller" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt5198890" class="movie-link">
+							<div class="image-container">
+								<img src="https://web.fmoviesto.site/_sf/294/96564302.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Eileen (2023)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Eileen</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 6.8</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">98 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Drama, Mystery, Thriller</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="comedy,crime" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt27145269" class="movie-link">
+							<div class="image-container">
+								<img src="https://web.fmoviesto.site/_sf/295/83060329.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Mr. Monk's Last Case: A Monk Movie (2023)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Mr. Monk's L...</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 7.6</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">97 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Comedy, Crime</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="comedy,animation,adventure" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt0338348" class="movie-link">
+							<div class="image-container">
+								<img src="https://web.fmoviesto.site/_sf/31/30691907.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>The Polar Express (2004)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">The Polar Exp...</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 6.6</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2004</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">100 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Comedy, Animation, Adventure</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="comedy,animation,adventure" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.to/embed/movie/tt11304740" class="movie-link">
+							<div class="image-container">
+								<img src="https://web.fmoviesto.site/_sf/292/89036835.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Wish (2023)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Wish</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 5.9</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">106 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Comedy, Animation, Adventure</span>
+						</div>
+					</div>
+				</li>
+				<li data-categories="comedy,family,animation" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.to/embed/movie/tt5755238" class="movie-link">
+							<div class="image-container">
+								<img src="https://web.fmoviesto.site/_sf/293/26483630.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Leo (2023)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Leo</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 7.0</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">157 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Comedy, Family, Animation</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="drama,action,adventure" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.to/embed/movie/tt10545296" class="movie-link">
+							<div class="image-container">
+								<img src="https://web.fmoviesto.site/_sf/292/87328447.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>The Hunger Games: The Ballad of Songbirds & Snakes (2023)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">The Hunger...</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 7.2</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">157 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Drama, Action, Adventure</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="series,crime,drama,action" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="/Series/TheBoys/Season3.html" class="movie-link">
+							<div class="image-container">
+								<img src="https://web.fmoviesto.site/_sf/223/78423497.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>The Boys - Season 3 (2022)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">The Boys</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.7</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2022</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">60 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Crime, Drama, Action</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="series,crime,drama,action" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="/Series/TheBoys/Season2.html" title="HD - Series, Crime, Drama, Action" class="movie-link">
+							<div class="image-container">
+								<img src="https://web.fmoviesto.site/_sf/223/78423497.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>The Boys - Season 2 (2020)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">The Boys</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.7</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2022</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">60 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Crime, Drama, Action</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="series,crime,drama,action" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="/Series/TheBoys/Season1.html" title="HD - Series, Crime, Drama, Action" class="movie-link">
+							<div class="image-container">
+								<img src="https://web.fmoviesto.site/_sf/223/78423497.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>The Boys - Season 1 (2019)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">The Boys</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.7</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2022</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">60 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Crime, Drama, Action</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="comedy,drama,thriller" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.to/embed/movie/tt17351924" class="movie-link">
+							<div class="image-container">
+								<img src="https://web.fmoviesto.site/_sf/294/80238141.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Saltburn (2023)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Saltburn</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 7.5</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">131 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Comedy, Drama, Thrille</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="action" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.to/embed/movie/tt15799866" title="HD - Action - 104min." class="movie-link">
+							<div class="image-container">
+								<img src="https://web.fmoviesto.site/_sf/294/23521957.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Silent Night (2023)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Silent Night</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 5.9</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">104 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Action</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="comedy,family" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt14227048" class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/293/79985998.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Family Switch (2023)</p>
+                    </a>
+						<div class="tooltip">
+							<span style="text-align: left;">Family Switch</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 5.7</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">106 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Comedy, Family</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="series,crime,thriller,drama" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="/Series/MrRobot/Season4.html" class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/52/43647886.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Mr Robot - Season 4 (2019)</p>
+                    </a>
+						<div class="tooltip">
+							<span style="text-align: left;">Mr Robot</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.5</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2015</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">49 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Crime, Drama, Thriller</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="series,crime,thriller,drama" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="/Series/MrRobot/Season3.html" class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/52/43647886.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Mr Robot - Season 3 (2017)</p>
+                    </a>
+						<div class="tooltip">
+							<span style="text-align: left;">Mr Robot</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.5</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2015</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">49 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Crime, Drama, Thriller</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="action,adventure,biography" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt13287846" class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/293/43620065.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Napoleon (2023)</p>
+                    </a>
+						<div class="tooltip">
+							<span style="text-align: left;">Napoleon</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 6.6</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">158 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Action, Adventure, Biography</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="drama" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt12404266" class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/290/77913192.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>The Last Rifleman (2023)</p>
+                    </a>
+						<div class="tooltip">
+							<span style="text-align: left;">The Last Rifle...</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 6.6</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">95 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Drama</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="drama" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt11000406" class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/290/69943729.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Dust To Dust (2023)</p>
+                    </a>
+						<div class="tooltip">
+							<span style="text-align: left;">Dust To Dust</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 6.1</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">112 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Drama</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="horror" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt27999306" title="HD - Horror - 107min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/290/95625806.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Hoon Payon (2023)</p>
+                    </a>
+						<div class="tooltip">
+							<span style="text-align: left;">Hoon Payon</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 4.9</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">107 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Horror</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="drama,romance,sci-fi" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt13968674" class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/290/20858747.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Fingernails (2023)</p>
+                    </a>
+						<div class="tooltip">
+							<span style="text-align: left;">Fingernails</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 5.9</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">113 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Drama, Romance, Sci-Fi</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="horror,mystery" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt4945764" class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/289/42329188.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Impuratus (2023)</p>
+                    </a>
+						<div class="tooltip">
+							<span style="text-align: left;">Impuratus</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 4.5</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">134 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Horror, Mystery</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="comedy,drama,romance" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt0795439" class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/290/24751439.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Numb (2007)</p>
+                    </a>
+						<div class="tooltip">
+							<span style="text-align: left;">Numb</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 6.5</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2007</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">93 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Comedy, Drama, Romance</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="horror,sci-fi,action" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt11430948" title="HD - Horror, Sci-Fi, Action - 88min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/290/45110183.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Bloodthirst (2023)</p>
+                    </a>
+					</div>
+                </li>
+				<li data-categories="horror" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt15019152" title="HD - Horror - 86min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/290/13786064.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>The Elevator (2023)</p>
+                    </a>
+					</div>
+                </li>
+				<li data-categories="thriller" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt23779058" title="HD - Thriller - 85min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/286/85849275.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Mercy Road (2023)</p>
+                    </a>
+					</div>
+                </li>
+				<li data-categories="horror" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt4589218" title="HD - Horror - 110min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/289/28276862.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Five Nights at Freddy's (2023)</p>
+                    </a>
+					</div>
+                </li>
+				<li data-categories="series,action,adventure,drama" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="/Series/Andor/Season1.html" title="HD - Series, Action, Drama, Adventure" class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/244/24350233.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Star Wars: Andor - Season 1 (2021)</p>
+                    </a>
+					</div>
+                </li>
+				<li data-categories="horror,thriller,mystery" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt21807222" title="HD - Horror, Mystery, Thriller - 118min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/284/92194920.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Saw X (2023)</p>
+                    </a>
+					</div>
+                </li>
+				<li data-categories="series,crime,history,drama" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="/Series/Bodies/Season1.html" title="HD - Series, Crime, Drama, History" class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/288/25037077.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Bodies - Season 1 (2023)</p>
+                    </a>
+					</div>
+                </li>
+				<li data-categories="series,crime,thriller,drama" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="/Series/MrRobot/Season2.html" title="HD - Series, Crime, Drama, Thriller" class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/52/43647886.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Mr Robot - Season 2 (2016)</p>
+                    </a>
+						<div class="tooltip">
+							<span style="text-align: left;">Mr Robot</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.5</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2015</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">49 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Crime, Drama, Thriller</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="series,crime,thriller,drama" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="/Series/MrRobot/Season1.html" title="HD - Series, Crime, Drama, Thriller" class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/52/43647886.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Mr Robot - Season 1 (2015)</p>
+                    </a>
+						<div class="tooltip">
+							<span style="text-align: left;">Mr Robot</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.5</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2015</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">49 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Crime, Drama, Thriller</span>
+						</div>
+					</div>
+                </li>
+				<li data-categories="crime,drama,mystery" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt13274016" title="HD - Crime, Drama, Mystery - 136min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/284/71177190.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Reptile (2023)</p>
+                    </a>
+					</div>
+                </li>
+				<li data-categories="horror" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt12921446" title="HD - Horror - 111min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/286/86230990.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>The Exorcist: Believer (2023)</p>
+                    </a>
+					</div>
+                </li>
+				<li data-categories="horror,thriller,mystery" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt28769402" title="HD - Horror, Mystery, Thriller - 88min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/285/71378898.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>The Exorcists (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="crime,thriller,action" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt17024450" title="HD - Crime, Thriller, Action - 109min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://web.fmoviesto.site/_sf/278/89235278.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>The Equalizer 3 (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="drama,thriller" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt15783520" title="HD - Drama, Thriller - 80min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://hd.fmoviesto.site/_sf/285/64901586.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>On Fire (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="thriller" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt17663876" title="HD - Thriller - 100min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://hd.fmoviesto.site/_sf/285/49156389.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Muzzle (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="mystery" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt28524545" title="HD - Mystery - 90min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://hd.fmoviesto.site/_sf/285/45100947.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Mystery Island (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="action" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt10923250" title="HD - Action - 117min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://hd.fmoviesto.site/_sf/285/61414911.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Last Resort (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="drama,action,adventure" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt11858890" title="HD - Drama, Action, Adventure - 134min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://hd.fmoviesto.site/_sf/285/51975923.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>The Creator (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="sci-fi,thriller" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt18083578" title="HD - Sci-Fi, Thriller - 99min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://hd.fmoviesto.site/_sf/285/40037888.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>57 Seconds (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="comedy,animation,adventure" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt15153532" title="HD - Comedy, Animation, Adventure - 93min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://hd.fmoviesto.site/_sf/278/62038011.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Strays (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="comedy,crime,action" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt11663228" title="HD - Comedy, Crime, Action - 165min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://hd.fmoviesto.site/_sf/278/75120602.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Jailer (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="action,adventure" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt22488024" title="HD - Action, Adventure - 130min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://hd.fmoviesto.site/_sf/278/81834834.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Sakra (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="horror" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt21080296" title="HD - Horror - 103min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://hd.fmoviesto.site/_sf/278/58915434.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Trinket Box (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="drama,romance" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt15334488" title="HD - Drama, Romance - 93min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://hd.fmoviesto.site/_sf/279/13556877.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>After Everything (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="thriller,action" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt14057604" title="HD - Thriller, Action - 91min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://hd.fmoviesto.site/_sf/278/35523794.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>King of Killers (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="sci-fi,action,adventure" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt9362930" title="HD - Sci-Fi, Action, Adventure - 127min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://hd.fmoviesto.site/_sf/276/47147779.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Blue Beetle (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="comedy,drama,romance" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt21103300" title="HD - Comedy, Drama, Romance - 92min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://hd.fmoviesto.site/_sf/279/50801345.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>My Big Fat Greek Wedding 3 (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="horror,thriller" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt10638522" title="HD - Horror, Thriller - 95min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://hd.fmoviesto.site/_sf/274/84016645.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Talk to Me (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="action,crime,drama" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt6906292" title="HD - Action, Crime, Drama - 91min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://hd.fmoviesto.site/_sf/277/43437659.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Retribution (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="horror" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt1001520" title="HD - Horror - 118min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://hd.fmoviesto.site/_sf/276/78258465.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>The Last Voyage of the Demeter (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="animation,action,adventure" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt8589698" title="HD - Animation, Action, Adventure - 99min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://m.media-amazon.com/images/M/MV5BYzE4MTllZTktMTIyZS00Yzg1LTg1YzAtMWQwZTZkNjNkODNjXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_FMjpg_UX1000_.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Teenage Mutant Ninja Turtles: Mutant Mayhem (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="action,adventure" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt1462764" title="HD - Action, Adventure - 154min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://m.media-amazon.com/images/M/MV5BYzM4MjQ0MzktNTMwNi00MDdjLTg3YTctY2M4OWRjNzA2N2E1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Indiana Jones and the Dial of Destiny (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="drama,horror,thriller" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt15683734" title="HD - Drama, Horror, Thriller - 99min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://hd.fmoviesto.site/_sf/279/80365165.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>It Lives Inside (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="horror,mystery,thriller" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt10160976" title="HD - Horror, Mystery, Thriller - 110min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://m.media-amazon.com/images/M/MV5BNmE5MmM2ZGEtNTVlNC00M2Q3LTliMjMtMzg5YjUyMjliZWIzXkEyXkFqcGdeQXVyMTAxNzQ1NzI@._V1_.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>The Nun II (2023)</p>
+                    </a>
+					</div>
+                </li>
+                <li data-categories="adventure,comedy,fantasy" class="movie-container category-movie-container">
+					<div class="movie-info">
+                    <a href="https://vidsrc.to/embed/movie/tt1517268" title="HD - Adventure, Comedy, Fantasy - 114min." class="movie-link">
+                        <div class="image-container">
+							<img src="https://hd.fmoviesto.site/_sf/273/16120004.jpg">
+							<span class="hd-text">HD</span>
+							<i class="fas fa-play-circle play-icon"></i>
+						</div>
+                        <p>Barbie (2023)</p>
+                    </a>
+					</div>
+                </li>
+				<li data-categories="drama,history,biography" class="movie-container category-movie-container">
+					<div class="movie-info">
+						<a href="https://vidsrc.xyz/embed/movie?imdb=tt15398776" class="movie-link">
+							<div class="image-container">
+								<img src="https://web.fmoviesto.site/_sf/273/80724839.jpg">
+								<span class="hd-text">HD</span>
+								<i class="fas fa-play-circle play-icon"></i>
+							</div>
+							<p>Oppenheimer (2023)</p>
+						</a>
+						<div class="tooltip">
+							<span style="text-align: left;">Oppenheimer</span>
+							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 9.0</span><br><br>
+							<span style="text-align: left; font-size: 13px; font-weight: normal;">2023</span>
+							<span style="float: right; font-size: 13px;  font-weight: normal;">181 min</span><br><br>
+							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Drama, History, Biography</span>
+						</div>
+					</div>
+				</li>
+            </ul>
+        </div>
+    </div>
+
+	<script>
+		// Function to apply event listeners to movie links and tooltips
+		function applyTooltips() {
+			const movieLinks = document.querySelectorAll('.movie-link');
+			movieLinks.forEach(link => {
+				const tooltip = link.nextElementSibling;
+				link.addEventListener('mouseover', () => {
+					tooltip.style.display = 'block';
+				});
+				link.addEventListener('mouseout', () => {
+					tooltip.style.display = 'none';
+				});
+			});
+		}
+
+		// Get references to the categories and movies lists
+		const categories = document.getElementById('categories');
+		const movies = document.getElementById('movies');
+		const movieListContainer = document.getElementById('movie-list-container');
+
+		// Add a click event listener to each category link
+		categories.addEventListener('click', (e) => {
+			if (e.target.tagName === 'A') {
+				const category = e.target.getAttribute('data-category');
+				// Create an array to store the movies that match the category
+				const categoryMovies = [];
+				// Loop through movies and collect those that match the category
+				for (const movie of movies.children) {
+					const movieCategories = movie.getAttribute('data-categories').split(',');
+					if (category === 'all') {
+						// Exclude series from "All Movies"
+						if (!movieCategories.includes('series')) {
+							categoryMovies.push(movie.cloneNode(true)); // Clone the matching movie
+						}
+					} else if (movieCategories.includes(category)) {
+						categoryMovies.push(movie.cloneNode(true)); // Clone the matching movie
+					}
+				}
+				// Clear the movie list container and append the matching movies
+				movieListContainer.innerHTML = '';
+				for (const categoryMovie of categoryMovies) {
+					movieListContainer.appendChild(categoryMovie);
+				}
+				applyTooltips(); // Reapply tooltips for new elements
+			}
+		});
+
+		// Apply tooltips on initial load
+		document.addEventListener('DOMContentLoaded', applyTooltips);
+	</script>
+</body>
+</html>
