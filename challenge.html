@@ -1,9 +1,10 @@
+<!-- DONT SEARCH HERE!! -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CTF Challenge</title>
+    <title>Juke's Challenge</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -74,6 +75,23 @@
     <button onclick="checkFlag()">Submit</button>
     <div id="notification" class="notification"></div>
 </div>
+
+<script>
+    function setCookie(name, value, days) {
+        let expires = "";
+        if (days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    window.onload = function() {
+        const lastFlagPart = "H4V3_FUN}";
+        setCookie("part5", lastFlagPart, 7);
+    };
+</script>
 
 <script>
     const Flag = "JUKE{H3110_7H15_15_MY_F1R57_CH4113NG3_H4V3_FUN}";
