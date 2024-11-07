@@ -64,16 +64,22 @@
 <div class="challenge-box">
     <h2>Juke's Challenge</h2>
     <hr style="width: 230px;">
+
     <p>
-        Think you can uncover hidden secrets? Dive into my CTF challenge and test your skills in Cyber Security.<br><br>
+        Think you can uncover hidden secrets?<br><br>
+        Dive into my challenge and test your skills in Cyber Security.<br><br>
         Your task is to piece together the parts of a hidden flag.<br><br>
         Are you up for the challenge?
     </p>
     <p><b>To solve this challenge you will NOT need to check the page's source code!!!</b></p>
     <p><a href="./flag.txt" download>flag.txt</a></p>
+
     <input type="text" id="flag-input" placeholder="Enter flag">
     <button onclick="checkFlag()">Submit</button>
     <div id="notification" class="notification"></div>
+
+    <button onclick="toggleHint()">Hint</button>
+    <p id="hint-message" style="display:none; color: rgb(247, 0, 255);">The 3rd part will be found in PNG file format</p>
 </div>
 
 <script>
@@ -94,6 +100,16 @@
 </script>
 
 <script>
+    function toggleHint() {
+        const hintMessage = document.getElementById("hint-message");
+
+        if (hintMessage.style.display === "none") {
+            hintMessage.style.display = "block";
+        } else {
+            hintMessage.style.display = "none";
+        }
+    }
+
     const Flag = "JUKE{H3110_7H15_15_MY_F1R57_CH4113NG3_H4V3_FUN}";
 
     function checkFlag() {
