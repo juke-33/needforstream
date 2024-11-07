@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .challenge-box {
+            width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .notification {
+            width: 200px;
+            margin: 10px auto;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        .correct {
+            color: #155724;
+            background-color: #d4edda;
+        }
+        .wrong {
+            color: #721c24;
+            background-color: #f8d7da;
+        }
+        input[type="text"] {
+            width: 250px;
+            padding: 8px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="challenge-box">
+    <h2>Juke's Challenge</h2>
+    <hr style="width: 230px;">
+    <p>
+        Think you can uncover hidden secrets? Dive into my CTF challenge and test your skills in Cyber Security.<br><br>
+        Your task is to piece together the parts of a hidden flag.<br><br>
+        Are you up for the challenge?
+    </p>
+    <p><b>To solve this challenge you will NOT need to check the page's source code!!!</b></p>
+    <p><a href="./flag.txt" download>flag.txt</a></p>
+    <input type="text" id="flag-input" placeholder="Enter flag">
+    <button onclick="checkFlag()">Submit</button>
+    <div id="notification" class="notification"></div>
+</div>
+
+<script>
+    const Flag = "JUKE{H3110_7H15_15_MY_F1R57_CH4113NG3_H4V3_FUN}";
+
+    function checkFlag() {
+        const user_input = document.getElementById("flag-input").value;
+        const notification = document.getElementById("notification");
+
+        if (user_input === Flag) {
+            notification.textContent = "Correct!";
+            notification.className = "notification correct";
+        } else {
+            notification.textContent = "Wrong!";
+            notification.className = "notification wrong";
+        }
+        notification.style.display = "block";
+    }
+</script>
+
+</body>
+</html>
