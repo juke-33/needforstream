@@ -16,4 +16,9 @@ function searchMovies() {
 			movieContainer.style.display = 'none';
 		}
 	});
+
+	// Update the URL with the search term
+	const newURL = new URL(window.location);
+	newURL.searchParams.set('search', query);
+	window.history.pushState({}, '', newURL);
 }

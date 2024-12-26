@@ -1,366 +1,136 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Need For Stream - Movies</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NEEDFORSTREAM - News">
+    <title>NEEDFORSTREAM - News</title>
     <link rel="icon" href="./photos/needforstream2.png" type="image/x-icon">
 
-	<meta charset="UTF-8">
-	<meta name="description" content="Movies">
-    <meta property="og:title" content="Need For Stream - Movies">
-    <meta property="og:description" content="Movies">
-    <meta property="og:image" content=".photos/needforstream3.png">
-    <meta property="og:url" content="https://juke-33.github.io/needforstream/">
-    <meta property="og:type" content="website">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-	<script src="./styles/disable.js"></script>
-	<script src="./styles/search.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a2327;
+            color: white;
+            line-height: 1.6;
+        }
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="./styles/nav.css">
-	<link rel="stylesheet" href="./styles/search.css">
-	<link rel="stylesheet" href="./styles/movies.css">
-
-<style>
-    /* Header Fonts */
-    @font-face {
-        font-family: 'HeaderFont1';
-        src: url('font1.otf') format('opentype');
-    }
-
-    /* Style that applies to the whole code */
-    * {
-        margin: 0;
-        text-decoration: none;
-        box-sizing: border-box;
-        font-weight: bold;
-        background: #2c3e50;
-    }
-    body {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont
-            , 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans'
-            , 'Helvetica Neue', sans-serif;
-    }
-
-	/* The Modal (background) */
-	.popup-modal {
-		display: none;
-		position: fixed; 
-		z-index: 1;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		overflow: auto;
-		background-color: rgba(0, 0, 0, 0.7);
-		justify-content: center;
-		align-items: center;
-	}
-	.popup-content {
-		background-color: #fefefe;
-		margin: auto;
-		border: 1px solid #888;
-		width: 100%;
-		max-width: 502px;
-		position: relative;
-	}
-</style>
+        /* Navigation Bar */
+        .navbar {
+            width: 100%;
+            background-color: rgb(25, 108, 217);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+        }
+        .navbar-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .navbar img {
+            height: 50px;
+        }
+        .navbar-links {
+            list-style-type: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar-links li {
+            margin: 0 15px;
+        }
+        .navbar-links a {
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .navbar-links a:hover {
+            color: #FFD700;
+        }
+        .navbar-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .navbar-toggle span {
+            background-color: white;
+            height: 3px;
+            width: 25px;
+            margin: 3px 0;
+        }
+        @media (max-width: 800px) {
+            .navbar-content {
+                padding: 0 10px;
+            }
+            .navbar-links {
+                display: none;
+                flex-direction: column;
+                background-color: white;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: auto;
+                max-width: 200px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                padding: 0;
+                margin: 0;
+            }
+            .navbar-links.active {
+                display: flex;
+            }
+            .navbar-toggle {
+                display: flex;
+            }
+            .navbar-links li {
+                margin: 0;
+                padding: 2px 0;
+                text-align: left;
+            }
+            .navbar-links a {
+                color: #333;
+                font-size: 18px;
+                font-weight: bold;
+                padding: 5px 10px;
+                display: block;
+                text-decoration: none;
+            }
+            .navbar-links a:hover {
+                color: #FFD700;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
-        <a href="https://juke-33.github.io/needforstream/">
-        	<label class="menu"><img class="image-container" src="./photos/nfs.png" width="430" style="background-color: rgb(25, 108, 217);"></label>
-		</a>
-        <ul class="menu-list">
-            <li><a href="index.html"> Home </a></li>
-            <li><a href="sports.html"> Sports </a></li>
-            <li><a href="movies.html"> Movies </a></li>
-        </ul>
-    </nav><br>
-	
-	<!-- Search -->
-    <div class="search-items">
-		<input type="text" id="movieSearch" placeholder="Type the name of a movie..." oninput="searchMovies()">
-		<button onclick="searchMovies()"><i class="fas fa-search"></i> Search</button><br>
-    </div>
-
-	<!-- Pop-up Modal -->
-	<div id="popup-modal" class="popup-modal">
-		<div class="popup-content">
-			<iframe id="movie-iframe" width="500px" height="350px" src="" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
-		</div>
-	</div>
-
-    <div id="movie-list-id">
-        <div id="categories-wrapper">
-            <ul class="categories" id="categories">
-                <li><a href="javascript:void(0);" data-category="movies">Movies</a></li>
-				<li><a href="javascript:void(0);" data-category="series">Series</a></li>
-				<!-- <li><a href="javascript:void(0);" data-category="trending"><i class="fas fa-fire"></i> Trending</a></li> -->
-				<li><a href="https://www.imdb.com/"><i class="fab fa-imdb"></i> IMDb</a></li>
-				<div class="dropdown">
-					<li><a href="javascript:void(0);" data-category="all"> SELECT CATEGORY <i class="fas fa-arrow-down"></i></a></li>
-					<div class="dropdown-content">
-						<li><a href="javascript:void(0);" data-category="action">Action</a></li>
-						<li><a href="javascript:void(0);" data-category="adventure">Adventure</a></li>
-						<li><a href="javascript:void(0);" data-category="animation">Animation</a></li>
-						<li><a href="javascript:void(0);" data-category="biography">Biography</a></li>
-						<li><a href="javascript:void(0);" data-category="comedy">Comedy</a></li>
-						<li><a href="javascript:void(0);" data-category="crime">Crime</a></li>
-						<li><a href="javascript:void(0);" data-category="documentary">Documentary</a></li>
-						<li><a href="javascript:void(0);" data-category="drama">Drama</a></li>
-						<li><a href="javascript:void(0);" data-category="family">Family</a></li>
-						<li><a href="javascript:void(0);" data-category="fantasy">Fantasy</a></li>
-						<li><a href="javascript:void(0);" data-category="history">History</a></li>
-						<li><a href="javascript:void(0);" data-category="horror">Horror</a></li>
-						<li><a href="javascript:void(0);" data-category="mystery">Mystery</a></li>
-						<li><a href="javascript:void(0);" data-category="romance">Romance</a></li>
-						<li><a href="javascript:void(0);" data-category="sci-fi">Sci-Fi</a></li>
-						<li><a href="javascript:void(0);" data-category="sport">Sport</a></li>
-						<li><a href="javascript:void(0);" data-category="thriller">Thriller</a></li>
-					</div>
-				</div>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <img src="./photos/nfs.png" alt="NEEDFORSTREAM">
+            <ul class="navbar-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sports.html">Sports</a></li>
+                <li><a href="movies.html">Movies</a></li>
             </ul>
-        </div><br>
-
-		<!-- List of Movies-->
-        <div id="movie-list-container">
-            <ul class="movie-list" id="movies">
-				<li data-categories="movies,horror" class="movie-container category-movie-container">
-					<div class="movie-info">
-						<a href="https://embed.su/embed/movie/1250264" class="movie-link">
-							<div class="image-container">
-								<img src="https://www.athinorama.gr/Content/ImagesDatabase/p/600x900/crop/both/da/da784a20384242ab863cd46aa91e48b3.jpg?quality=81&404=default&v=4">
-								<span class="hd-text">HD</span>
-								<i class="fas fa-play-circle play-icon"></i>
-							</div>
-							<p>Μην ανοίγεις την πόρτα (2024)</p>
-						</a>
-						<div class="tooltip">
-							<span style="text-align: left;">Μην ανοίγεις την πόρτα</span>
-							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 6.7</span><br><br>
-							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
-							<span style="float: right; font-size: 13px;  font-weight: normal;">87 min</span><br><br>
-							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Horror</span>
-						</div>
-					</div>
-				</li>
-				<li data-categories="movies,horror,thriller" class="movie-container category-movie-container">
-					<div class="movie-info">
-						<a href="https://streambucket.net/playvideo.php?video_id=TFdhV1FUbWZ6TjBBN0w3TlZRPT0=&server_id=29&token=SzJpWVREaUcxTUVVN2I3UFRGb0tTaXFTVStmQXNRdkpNcXV2OWtFc2ljS0dnQ1JJeEdWaWdVeTN5VG01RG1ROWRiSVcvZU9YSVo1V0pHbzZjNlhLN2F4MDNZaWhzN2hDUDhRV1dtMFRoUnl4d0YyNFJWQVRlOTAvLzBEay9ZODZwOFdFQnJYUTYvUWRGVjJNQ0ZqbndURzY5TzJNNUtjb0tzRT0=&init=0" class="movie-link">
-							<div class="image-container">
-								<img src="https://image.tmdb.org/t/p/original/7NDHoebflLwL1CcgLJ9wZbbDrmV.jpg">
-								<span class="hd-text">HD</span>
-								<i class="fas fa-play-circle play-icon"></i>
-							</div>
-							<p>Terrifier 3 (2024)</p>
-						</a>
-						<div class="tooltip">
-							<span style="text-align: left;">Terrifier 3</span>
-							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 7.5</span><br><br>
-							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
-							<span style="float: right; font-size: 13px;  font-weight: normal;">125 min</span><br><br>
-							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Horror, Thriller</span>
-						</div>
-					</div>
-				</li>
-				<li data-categories="movies,comedy,thriller,action" class="movie-container category-movie-container">
-					<div class="movie-info">
-						<a href="https://embed.su/embed/movie/877817" class="movie-link">
-							<div class="image-container">
-								<img src="https://mediux.pro/_next/image?url=https%3A%2F%2Fapi.mediux.pro%2Fassets%2F662cedce-50be-4d8f-b2d5-cebb0a992d58%3F20240829061350&w=3840&q=75">
-								<span class="hd-text">HD</span>
-								<i class="fas fa-play-circle play-icon"></i>
-							</div>
-							<p>Wolfs (2024)</p>
-						</a>
-						<div class="tooltip">
-							<span style="text-align: left;">Wolfs</span>
-							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 7.7</span><br><br>
-							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
-							<span style="float: right; font-size: 13px;  font-weight: normal;">128 min</span><br><br>
-							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Comedy, Thriller, Action</span>
-						</div>
-					</div>
-				</li>
-				<li data-categories="movies,action,comedy,sci-fi" class="movie-container category-movie-container">
-					<div class="movie-info">
-						<a href="https://embed.su/embed/movie/533535" class="movie-link">
-							<div class="image-container">
-								<img src="https://lumiere-a.akamaihd.net/v1/images/p_deadpool_wolverine_snuggle_gen_v2_c251bde1.png">
-								<span class="hd-text">HD</span>
-								<i class="fas fa-play-circle play-icon"></i>
-							</div>
-							<p>Deadpool & Wolverine (2024)</p>
-						</a>
-						<div class="tooltip">
-							<span style="text-align: left;">Deadpool & Wolverine</span>
-							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 6.7</span><br><br>
-							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
-							<span style="float: right; font-size: 13px;  font-weight: normal;">108 min</span><br><br>
-							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Action, Comedy, Science Fiction</span>
-						</div>
-					</div>
-				</li>
-				<li data-categories="movies,sci-fi,trhiller,drama,horror" class="movie-container category-movie-container">
-					<div class="movie-info">
-						<a href="https://embed.su/embed/movie/1125510" class="movie-link">
-							<div class="image-container">
-								<img src="https://m.media-amazon.com/images/M/MV5BNzI4YjkyODctMGJmNC00YjBjLTllNjAtNDkxNTJmZjg4MGZkXkEyXkFqcGc@._V1_QL75_UX190_CR0,0,190,281_.jpg">
-								<span class="hd-text">HD</span>
-								<i class="fas fa-play-circle play-icon"></i>
-							</div>
-							<p>The Platform 2 (2024)</p>
-						</a>
-						<div class="tooltip">
-							<span style="text-align: left;">The Platform 2</span>
-							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 5.7</span><br><br>
-							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
-							<span style="float: right; font-size: 13px;  font-weight: normal;">100 min</span><br><br>
-							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Science Fiction, Thriller, Drama, Horror</span>
-						</div>
-					</div>
-				</li>
-				<li data-categories="movies,action,horror,sci-fi" class="movie-container category-movie-container">
-					<div class="movie-info">
-						<a href="https://vidbinge.dev/embed/movie/36647" class="movie-link">
-							<div class="image-container">
-								<img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p21512_p_v8_ad.jpg">
-								<span class="hd-text">HD</span>
-								<i class="fas fa-play-circle play-icon"></i>
-							</div>
-							<p>Blade (1998)</p>
-						</a>
-						<div class="tooltip">
-							<span style="text-align: left;">Blade</span>
-							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 7.1</span><br><br>
-							<span style="text-align: left; font-size: 13px; font-weight: normal;">1998</span>
-							<span style="float: right; font-size: 13px;  font-weight: normal;">120 min</span><br><br>
-							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Action, Horror, Science Fiction</span>
-						</div>
-					</div>
-				</li>
-				<li data-categories="movies,action,adventure,drama,history,romance,thriller" class="movie-container category-movie-container">
-					<div class="movie-info">
-						<a href="https://vidbinge.dev/embed/movie/36647" class="movie-link">
-							<div class="image-container">
-								<img src="https://cinemastercard.az/site/assets/files/0/33/34/914/monte-kristo-700x1000.350x0.jpg">
-								<span class="hd-text">HD</span>
-								<i class="fas fa-play-circle play-icon"></i>
-							</div>
-							<p>Le comte de Monte-Cristo (2024)</p>
-						</a>
-						<div class="tooltip">
-							<span style="text-align: left;">Le comte de Monte-Cristo</span>
-							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 8.0</span><br><br>
-							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
-							<span style="float: right; font-size: 13px;  font-weight: normal;">178 min</span><br><br>
-							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Action, Adventure, Drama, History, Romance, Thriller</span>
-						</div>
-					</div>
-				</li>
-				<li data-categories="movies,drama,horror" class="movie-container category-movie-container">
-					<div class="movie-info">
-						<a href="https://vidbinge.dev/embed/movie/933260" class="movie-link">
-							<div class="image-container">
-								<img src="https://edisonfilmhub.cz/DATA/FILMY/substance.jpeg">
-								<span class="hd-text">HD</span>
-								<i class="fas fa-play-circle play-icon"></i>
-							</div>
-							<p>The Substance (2024)</p>
-						</a>
-						<div class="tooltip">
-							<span style="text-align: left;">The Substance</span>
-							<span style="float: right;"><i class="fas fa-star" style="font-size: 15px; background-color: black; color: yellow;"></i> 7.8</span><br><br>
-							<span style="text-align: left; font-size: 13px; font-weight: normal;">2024</span>
-							<span style="float: right; font-size: 13px;  font-weight: normal;">141 min</span><br><br>
-							<span style="text-align: left; font-size: 13px;  font-weight: normal;">Drama, Horror</span>
-						</div>
-					</div>
-				</li>
-				
-            </ul>
+            <div class="navbar-toggle" onclick="toggleNavbar()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-    </div>
+    </nav>
 
-	<script>
-		// Function to open the modal and display the movie
-		function openModal(movieUrl) {
-			const modal = document.getElementById('popup-modal');
-			const iframe = document.getElementById('movie-iframe');
-			iframe.src = movieUrl; // Set the iframe source to the movie link
-			modal.style.display = 'flex'; // Display the modal
-		}
-		
-		// Function to close the modal
-		function closeModal() {
-			const modal = document.getElementById('popup-modal');
-			const iframe = document.getElementById('movie-iframe');
-			modal.style.display = 'none'; // Hide the modal
-			iframe.src = ''; // Clear the iframe source
-		}
-		
-		// Add event listeners to movie links
-		function applyTooltips() {
-			const movieLinks = document.querySelectorAll('.movie-link'); // Get all movie links
-			movieLinks.forEach(link => {
-				const movieUrl = link.href; // Get the movie URL from the anchor tag
-				link.href = "javascript:void(0);"; // Disable default link behavior
-		
-				// Show tooltip on hover
-				const tooltip = link.nextElementSibling;
-				link.addEventListener('mouseover', () => {
-					tooltip.style.display = 'block';
-				});
-				link.addEventListener('mouseout', () => {
-					tooltip.style.display = 'none';
-				});
-		
-				// Open modal on click
-				link.addEventListener('click', () => {
-					openModal(movieUrl); // Pass the correct URL to openModal
-				});
-			});
-		}
-		
-		// Get references to the categories and movies lists
-		const categories = document.getElementById('categories');
-		const movies = document.getElementById('movies');
-		
-		// Add a click event listener to each category link
-		categories.addEventListener('click', (e) => {
-			const category = e.target.getAttribute('data-category');
-		
-			// Loop through movies and hide/show based on the category
-			for (const movie of movies.children) {
-				const movieCategories = movie.getAttribute('data-categories').split(',');
-				
-				if (category === 'all') {
-					movie.style.display = ''; // Show all movies
-				} else if (movieCategories.includes(category)) {
-					movie.style.display = ''; // Show the matching movie
-				} else {
-					movie.style.display = 'none'; // Hide non-matching movies
-				}
-			}
-		
-			// Update the URL without refreshing the page
-			const newUrl = `?category=${encodeURIComponent(category)}`;
-			window.history.pushState({ path: newUrl }, '', newUrl);
-		});
-		
-		// Close the modal when clicking outside the content
-		window.addEventListener('click', (event) => {
-			const modal = document.getElementById('popup-modal');
-			if (event.target === modal) {
-				closeModal();
-			}
-		});
-		
-		// Apply tooltips on initial load
-		document.addEventListener('DOMContentLoaded', applyTooltips);
-	</script>		
+    <script>
+        function toggleNavbar() {
+            const navbarLinks = document.querySelector('.navbar-links');
+            navbarLinks.classList.toggle('active');
+        }
+    </script>     
 </body>
 </html>

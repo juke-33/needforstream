@@ -181,7 +181,7 @@
 	font-weight: normal;
 	text-align: left;
 	display: none;
-	width: 250px;
+	width: 250px; /* Changed */
 	height: 140px;
 	position: absolute;
 	border-radius: 10px;
