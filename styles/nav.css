@@ -50,6 +50,9 @@
 	.navbar-content {
 		padding: 0 10px;
 	}
+	.navbar img {
+		height: 40px;
+	}
 	.navbar-links {
 		display: none;
 		flex-direction: column;
