@@ -99,7 +99,6 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-    width: 100%;
 }
 .search-icon {
     position: absolute;
@@ -124,6 +123,7 @@ body {
     background-color: #1a2327;
     color: white;
     padding: 10px;
+    width: 120px;
     border-radius: 5px;
     border: none;
     outline: none;
@@ -180,6 +180,8 @@ body {
         width: 80%;
     }
     .sidebar {
-        width: 80%;
+        width: auto; /* Use 80% width in smaller screens */
+        max-width: 420px; /* Ensure it doesn't exceed 420px */
+        max-width: min(80%, 420px); /* Restrict to the smaller of 80% or 420px */
     }
 }
