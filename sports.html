@@ -148,13 +148,46 @@
 
         <!-- ΠΡΟΓΡΑΜΜΑ -->
         <div class="box box-sports">
-            <h2 class="date">ΠΕΜΠΤΗ 27 ΜΑΡΤΙΟΥ</h2>
+            <h2 class="date" id="greek-date"></h2>
+
+            <div class="championship-info">
+                <img src="./photos/champions-league.png" class="championship-photo">
+                <h2 class="title">Champions League</h2>
+            </div>
+            <div class="game-info-box">
+                <div class="game-info">
+                    <div class="team-info">
+                        <img src="" style="width: 40px; height: 40px; float: left; margin-right: 10px; border-radius: 12px;">
+                        <p style="margin-left: 60px;">TEAM 1</p>
+                    </div>
+                    <h style="padding: 7px;border: 1px solid #6c757d; border-radius: 15px;">22:00</h>
+                    <div class="team-info">
+                        <img src="" style="width: 40px; height: 40px; float: right; margin-left: 10px; border-radius: 12px;">
+                        <p style="margin-right: 60px;">TEAM 2</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <a class="button" href="">Link1</a>
+                    <a class="button" href="">Link2</a>
+                    <a class="button" href="">Link3</a>
+                    <a class="button" href="">Link4</a>
+                </div>
+                <div class="iframe-container">
+                    <span class="close-iframe">&times;</span> <!-- Close button -->
+                    <iframe
+                        class="frame" autoplay="false" allowfullscreen="true" scrolling="no" frameborder="0"
+                        width="100%" height="320px" src="" style="display: none;">
+                    </iframe>
+                </div>
+            </div>
+            <!-- ΤΕΛΟΣ ΠΡΟΓΡΑΜΜΑΤΟΣ -->
 
             <!-- ΑΛΛΑ SITE -->
+            <p>ΑΝ ΔΕΝ ΕΙΝΑΙ ΕΝΗΜΕΡΩΜΕΝΟ ΤΟ SITE, ΜΠΕΙΤΕ ΕΔΩ</p>
             <div class="buttons">
-                <a class="button" target="_blank" href="https://foothubhd.online/">Link 1</a>
-                <a class="button" target="_blank" href="https://daddylivehd1.click/">Link 2</a>
-                <a class="button" target="_blank" href="https://sportsonline.gl/prog.txt">Link 3</a>
+                <a class="button" target="_blank" href="https://foothubhd.online/">Site1</a>
+                <a class="button" target="_blank" href="https://daddylivehd1.click/">Site2</a>
+                <a class="button" target="_blank" href="https://sportsonline.gl/prog.txt">Site3</a>
             </div>
             <!-- ΤΕΛΟΣ ΑΛΛΩΝ SITE -->
             
@@ -170,10 +203,75 @@
     </div>
 
     <script>
+        // Automatically change the date
+        const greekDays = ['ΚΥΡΙΑΚΗ', 'ΔΕΥΤΕΡΑ', 'ΤΡΙΤΗ', 'ΤΕΤΑΡΤΗ', 'ΠΕΜΠΤΗ', 'ΠΑΡΑΣΚΕΥΗ', 'ΣΑΒΒΑΤΟ'];
+        const greekMonths = ['ΙΑΝΟΥΑΡΙΟΥ', 'ΦΕΒΡΟΥΑΡΙΟΥ', 'ΜΑΡΤΙΟΥ', 'ΑΠΡΙΛΙΟΥ', 'ΜΑΪΟΥ', 'ΙΟΥΝΙΟΥ', 'ΙΟΥΛΙΟΥ', 'ΑΥΓΟΥΣΤΟΥ', 'ΣΕΠΤΕΜΒΡΙΟΥ', 'ΟΚΤΩΒΡΙΟΥ', 'ΝΟΕΜΒΡΙΟΥ', 'ΔΕΚΕΜΒΡΙΟΥ'];
+
+        const now = new Date();
+        const dayName = greekDays[now.getDay()];
+        const dayNumber = now.getDate();
+        const monthName = greekMonths[now.getMonth()];
+
+        const formattedDate = `${dayName} ${dayNumber} ${monthName}`;
+        document.getElementById('greek-date').textContent = formattedDate;
+
+        // Function to set the default iframe source and handle autoplay prevention
+        function setDefaultIframeSources() {
+            const gameInfoBoxes = document.querySelectorAll('.game-info-box');
+            gameInfoBoxes.forEach((box) => {
+                const buttons = box.querySelectorAll('.buttons .button');
+                const iframe = box.querySelector('.frame');
+                const closeButton = box.querySelector('.close-iframe');
+                if (buttons.length > 0) {
+                    // Append autoplay prevention query parameter
+                    const firstLink = buttons[0].href + (buttons[0].href.includes('?') ? '&' : '?') + 'autoplay=0';
+                    iframe.dataset.defaultSrc = firstLink; // Save the default src for later
+                }
+
+                // Add click event to close button
+                closeButton.addEventListener('click', () => {
+                    iframe.src = ''; // Clear the iframe source
+                    iframe.style.display = 'none'; // Hide the iframe
+                    closeButton.style.display = 'none'; // Hide the close button
+                });
+            });
+        }
+
+        // Function to update iframe visibility and source when a button is clicked
+        function setupButtonClickHandlers() {
+            const gameInfoBoxes = document.querySelectorAll('.game-info-box');
+            gameInfoBoxes.forEach((box) => {
+                const buttons = box.querySelectorAll('.buttons .button');
+                const iframe = box.querySelector('.frame');
+                const closeButton = box.querySelector('.close-iframe');
+                buttons.forEach((button) => {
+                    button.addEventListener('click', (event) => {
+                        event.preventDefault(); // Prevent default link behavior
+                        iframe.src = button.href + (button.href.includes('?') ? '&' : '?') + 'autoplay=0'; // Update src
+                        iframe.style.display = 'block'; // Unhide iframe
+                        closeButton.style.display = 'block'; // Show close button
+                    });
+                });
+            });
+        }
+
+        // Hide all iframes initially and set up handlers
+        setDefaultIframeSources();
+        setupButtonClickHandlers();
+
         function toggleNavbar() {
             const navbarLinks = document.querySelector('.navbar-links');
             navbarLinks.classList.toggle('active');
         }
+
+        window.onload = function() {
+            const popup = document.getElementById('popup-box');
+            const closeButton = document.getElementById('close-popup');
+
+            closeButton.onclick = function() {
+                popup.style.display = 'none';
+            };
+        };
     </script>
 </body>
 </html>
