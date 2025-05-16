@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="./photos/yap.png" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="./photos/yap.png" type="image/x-icon" />
   <title>yap</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
-      padding: 40px;
       background-color: #f9f9f9;
+      color: #333;
     }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
+
     .download-buttons {
-      margin: 20px 0;
+      margin: 30px 0;
     }
+
     .download-buttons a {
       text-decoration: none;
       display: inline-block;
@@ -28,41 +26,160 @@
       font-size: 1em;
       font-weight: bold;
       color: white;
+      transition: background 0.3s ease;
     }
-    .android-btn {
+
+    .android-btn, .ios-btn {
       background-color: #3DDC84;
     }
-    .ios-btn {
-      background-color: #3DDC84;
+
+    .android-btn:hover, .ios-btn:hover {
+      background-color: #2fc172;
     }
+
     .screenshots {
       margin-top: 40px;
     }
+
     .screenshots img {
       max-width: 200px;
       margin: 10px;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .screenshots img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+    }
+
+    .lightbox.show {
+      display: flex;
+    }
+
+    .version-log {
+      margin-top: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .version-log h2 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .version-log ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .version-log li {
+      margin-bottom: 10px;
+    }
+
+    .version-log strong {
+      color: #3DDC84;
     }
   </style>
 </head>
 <body>
   <h1>Download my brand new chat app!</h1>
+
   <div class="download-buttons">
     <div style="display: inline-block; margin: 10px;">
-        <img src="photos/yap.png" alt="Android App Icon" style="width: 180px; height: 180px; border-radius: 50px; object-fit: contain; margin-bottom: 10px;">
-        <br>
-        <a href="https://drive.google.com/file/d/1_RUqZq3o71RWok7RceHBPc-trcY95yAg/view?usp=sharing" class="android-btn" download>Android</a>
-        <a href="" class="ios-btn">iOS (coming soon)</a>
+      <img src="photos/yap.png" alt="App Icon" style="width: 100px; height: 100px; border-radius: 20px; object-fit: contain; margin-bottom: 10px;">
+      <br>
+      <a href="https://drive.google.com/file/d/1_RUqZq3o71RWok7RceHBPc-trcY95yAg/view?usp=sharing" class="android-btn" download>Android</a>
+      <a href="" class="ios-btn">iOS (soon)</a>
     </div>
-    </div>
-
-  <div class="screenshots">
-    <img src="yap/screenshot1.jfif" alt="Screenshot 1">
-    <img src="yap/screenshot2.jfif" alt="Screenshot 2">
-    <img src="yap/screenshot3.jfif" alt="Screenshot 3">
-    <img src="yap/screenshot4.jfif" alt="Screenshot 4">
   </div>
 
+  <div class="screenshots">
+    <img src="yap/screenshot1.jfif" alt="Screenshot 1" onclick="openLightbox(this.src)">
+    <img src="yap/screenshot2.jfif" alt="Screenshot 2" onclick="openLightbox(this.src)">
+    <img src="yap/screenshot3.jfif" alt="Screenshot 3" onclick="openLightbox(this.src)">
+    <img src="yap/screenshot4.jfif" alt="Screenshot 4" onclick="openLightbox(this.src)">
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <img id="lightbox-img" src="" alt="Zoomed screenshot">
+  </div>
+
+  <!-- Version Release Log -->
+  <div class="version-log">
+    <h2>Version Releases</h2>
+    <ul>
+      <li>
+        <strong>v1.0.2</strong> – May 19, 2025
+        <br>
+        - Replace post & comment creator email with username.
+        <br>
+        - Fixed date format.
+      </li>
+      <li>
+        <strong>v1.0.1</strong> – May 16, 2025
+        <br>
+        - Added view / hide comments functionality.
+      </li>
+      <li>
+        <strong>v1.0.0</strong> – May 15, 2025
+        <br>
+        - Initial release of yap chat app!
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox(src) {
+      lightboxImg.src = src;
+      lightbox.classList.add('show');
+    }
+
+    function closeLightbox(event) {
+      if (event.target === lightbox || event.key === "Escape") {
+        lightbox.classList.remove('show');
+        lightboxImg.src = '';
+      }
+    }
+
+    // Close with ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLightbox({ target: lightbox });
+      }
+    });
+  </script>
 </body>
 </html>
