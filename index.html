@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="NEEDFORSTREAM - News">
+    
     <meta property="og:title" content="NEEDFORSTREAM - News">
     <meta property="og:description" content="News">
     <meta property="og:image" content="https://juke-33.github.io/needforstream/photos/needforstream3.png">
@@ -12,6 +13,11 @@
     <meta property="og:type" content="website">
 
     <link rel="icon" href="./photos/needforstream2.png" type="image/x-icon">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="./styles/nav.css">
@@ -21,9 +27,11 @@
 <body>
     <nav class="navbar">
         <div class="navbar-content">
-            <img src="./photos/nfs.png" alt="NEEDFORSTREAM">
+            <a href="index.html" class="logo-link">
+                <img src="./photos/nfs.png" alt="NEEDFORSTREAM">
+            </a>
             <ul class="navbar-links">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="sports.html">Sports</a></li>
                 <li><a href="movies.html">Movies</a></li>
             </ul>
@@ -35,106 +43,97 @@
         </div>
     </nav>
 
-    <div class="boxes">
-        <!-- Latest News -->
+    <div class="container main-layout">
         <div class="news-box-left">
+            <h2 class="section-header"><i class="fas fa-newspaper"></i> Latest News</h2>
+            
             <div class="news-item" data-title="SUPER LEAGUE / ΠΟΔΟΣΦΑΙΡΟ / ΟΛΥΜΠΙΑΚΟΣ">
-                <img src="https://www.dnews.gr/media/k2/items/cache/72e9af17e283e0f0825149fed2f57ce9_L.jpg" alt="News Image">
+                <div class="img-wrapper">
+                    <img src="https://www.dnews.gr/media/k2/items/cache/72e9af17e283e0f0825149fed2f57ce9_L.jpg" alt="News Image">
+                </div>
                 <div class="news-details">
-                    <div class="time">Posted on April 14, 2025</div>
-                    <div class="title">SUPER LEAGUE / ΠΟΔΟΣΦΑΙΡΟ / ΟΛΥΜΠΙΑΚΟΣ</div>
-                    <div class="description">Πρωταθλητής και μαθηματικά ο Ολυμπιακός</div>
+                    <div class="tags"><span class="tag">Super League</span><span class="tag">Olympiacos</span></div>
+                    <div class="title">Πρωταθλητής και μαθηματικά ο Ολυμπιακός</div>
+                    <div class="description">Η ομάδα του Πειραιά κατέκτησε τον τίτλο μετά από μια συναρπαστική σεζόν.</div>
+                    <div class="time"><i class="far fa-clock"></i> April 14, 2025</div>
                 </div>
             </div>
+
             <div class="news-item" data-title="NATIONS LEAGUE / ΠΟΔΟΣΦΑΙΡΟ / ΕΘΝΙΚΗ ΕΛΛΑΔΟΣ">
-                <img src="https://esquire.com.gr/Content/ImagesDatabase/p/crop/both/78/78cb2e8ad870431d8eb05ff30a7fb3b8.jpg?quality=60&404=default&v=02" alt="News Image">
+                <div class="img-wrapper">
+                    <img src="https://esquire.com.gr/Content/ImagesDatabase/p/crop/both/78/78cb2e8ad870431d8eb05ff30a7fb3b8.jpg?quality=60&404=default&v=02" alt="News Image">
+                </div>
                 <div class="news-details">
-                    <div class="time">Posted on March 23, 2025</div>
-                    <div class="title">NATIONS LEAGUE / ΠΟΔΟΣΦΑΙΡΟ / ΕΘΝΙΚΗ ΕΛΛΑΔΟΣ</div>
-                    <div class="description">Τρομερή η Ελλάδα σάρωσε με 0-3 την Σκωτία-δείτε τα γκολ</div>
+                    <div class="tags"><span class="tag">Nations League</span><span class="tag">Greece</span></div>
+                    <div class="title">Τρομερή η Ελλάδα σάρωσε με 0-3 την Σκωτία</div>
+                    <div class="description">Δείτε τα γκολ και τις καλύτερες φάσεις από τον θρίαμβο της Εθνικής.</div>
+                    <div class="time"><i class="far fa-clock"></i> March 23, 2025</div>
                 </div>
             </div>
+
             <div class="news-item" data-title="CONFERENCE / ΠΟΔΟΣΦΑΙΡΟ / ΠΑΝΑΘΗΝΑΙΚΟΣ">
-                <img src="https://www.dnews.gr/media/k2/items/cache/728cb7b9aeebb4867e1f970043462ca0_L.jpg?t=20250313_220828" alt="News Image">
+                <div class="img-wrapper">
+                    <img src="https://www.dnews.gr/media/k2/items/cache/728cb7b9aeebb4867e1f970043462ca0_L.jpg?t=20250313_220828" alt="News Image">
+                </div>
                 <div class="news-details">
-                    <div class="time">Posted on March 14, 2025</div>
-                    <div class="title">CONFERENCE / ΠΟΔΟΣΦΑΙΡΟ / ΠΑΝΑΘΗΝΑΙΚΟΣ</div>
-                    <div class="description">Φιορεντίνα - Παναθηναϊκός 3-1: Πάλεψε, αλλά δεν τα κατάφερε</div>
+                    <div class="tags"><span class="tag">Conference</span><span class="tag">Panathinaikos</span></div>
+                    <div class="title">Φιορεντίνα - Παναθηναϊκός 3-1</div>
+                    <div class="description">Πάλεψε, αλλά δεν τα κατάφερε απέναντι στην Ιταλική ομάδα.</div>
+                    <div class="time"><i class="far fa-clock"></i> March 14, 2025</div>
                 </div>
             </div>
+
             <div class="news-item" data-title="EUROPA LEAGUE / ΠΟΔΟΣΦΑΙΡΟ / ΠΑΟΚ">
-                <img src="https://www.sport24.gr/wp-content/uploads/2025/02/Pelkas3-1200x800.jpg" alt="News Image">
+                <div class="img-wrapper">
+                    <img src="https://www.sport24.gr/wp-content/uploads/2025/02/Pelkas3-1200x800.jpg" alt="News Image">
+                </div>
                 <div class="news-details">
-                    <div class="time">Posted on February 20, 2025</div>
-                    <div class="title">EUROPA LEAGUE / ΠΟΔΟΣΦΑΙΡΟ / ΠΑΟΚ</div>
-                    <div class="description">Ο Δικέφαλος αποχαιρέτησε το Europa League με δύο ήττες από τους Ρουμάνους</div>
+                    <div class="tags"><span class="tag">Europa League</span><span class="tag">PAOK</span></div>
+                    <div class="title">Ο Δικέφαλος αποχαιρέτησε το Europa League</div>
+                    <div class="description">Δύο ήττες από τους Ρουμάνους σήμαναν το τέλος της ευρωπαϊκής πορείας.</div>
+                    <div class="time"><i class="far fa-clock"></i> February 20, 2025</div>
                 </div>
             </div>
-            <div class="news-item" data-title="ΚΥΠΕΛΛΟ ΕΛΛΑΔΟΣ / ΠΟΔΟΣΦΑΙΡΟ / ΟΛΥΜΠΙΑΚΟΣ">
-                <img src="https://www.tovima.gr/wp-content/uploads/2025/02/05/Olympiakos-panigyriki.jpg" alt="News Image">
-                <div class="news-details">
-                    <div class="time">Posted on February 6, 2025</div>
-                    <div class="title">ΚΥΠΕΛΛΟ ΕΛΛΑΔΟΣ / ΠΟΔΟΣΦΑΙΡΟ / ΟΛΥΜΠΙΑΚΟΣ</div>
-                    <div class="description">Πρόκριση με Μουζακίτη! Ο Ολυμπιακός πέταξε εκτός Κυπέλλου τον Παναθηναϊκό.</div>
+            
+             <div class="news-item" data-title="ΚΥΠΕΛΛΟ ΕΛΛΑΔΟΣ / ΠΟΔΟΣΦΑΙΡΟ / ΟΛΥΜΠΙΑΚΟΣ">
+                <div class="img-wrapper">
+                    <img src="https://www.tovima.gr/wp-content/uploads/2025/02/05/Olympiakos-panigyriki.jpg" alt="News Image">
                 </div>
-            </div>
-            <div class="news-item" data-title="EUROPA LEAGUE / ΠΟΔΟΣΦΑΙΡΟ / ΠΑΟΚ">
-                <img src="https://www.newsit.gr/wp-content/uploads/2025/01/PAOK_EUROKINISSI_1-1200x800.jpg" alt="News Image">
                 <div class="news-details">
-                    <div class="time">Posted on January 31, 2025</div>
-                    <div class="title">EUROPA LEAGUE / ΠΟΔΟΣΦΑΙΡΟ / ΠΑΟΚ</div>
-                    <div class="description">Κλήρωση Europa League: Ο ΠΑΟΚ θα αντιμετωπίσει την Στεάουα Βουκουρεστίου.</div>
-                </div>
-            </div>
-            <div class="news-item" data-title="CONFERENCE / ΠΟΔΟΣΦΑΙΡΟ / ΠΑΝΑΘΗΝΑΙΚΟΣ">
-                <img src="https://www.tovima.gr/wp-content/uploads/2024/12/20/pao-2.jpg" alt="News Image">
-                <div class="news-details">
-                    <div class="time">Posted on December 20, 2024</div>
-                    <div class="title">CONFERENCE / ΠΟΔΟΣΦΑΙΡΟ / ΠΑΝΑΘΗΝΑΙΚΟΣ</div>
-                    <div class="description">Κλήρωση Παναθηναϊκού: Με την Βίκινγκουρ στα νοκ άουτ της διοργάνωσης.</div>
+                    <div class="tags"><span class="tag">Greek Cup</span><span class="tag">Olympiacos</span></div>
+                    <div class="title">Πρόκριση με Μουζακίτη!</div>
+                    <div class="description">Ο Ολυμπιακός πέταξε εκτός Κυπέλλου τον Παναθηναϊκό στο ντέρμπι αιωνίων.</div>
+                    <div class="time"><i class="far fa-clock"></i> February 6, 2025</div>
                 </div>
             </div>
         </div>
 
-        <!-- Right News Box for Search and Most Popular Teams -->
         <div class="news-box-right">
-            <!-- Search Bar -->
             <div class="search-container">
-                <input type="text" class="search-bar" placeholder="Search..." id="searchBar" onkeyup="filterNews()">
+                <input type="text" class="search-bar" placeholder="Search news..." id="searchBar" onkeyup="filterNews()">
                 <button class="search-button" onclick="filterNews()">
                     <i class="fas fa-search"></i>
                 </button>
             </div>
 
-            <!-- Popular Teams Title -->
-            <div class="popular-teams-title">Popular Teams</div>
-
-            <!-- Popular Teams Box -->
             <div class="popular-teams-box">
-                <!-- Most Popular Teams -->
+                <h3 class="popular-teams-title"><i class="fas fa-fire"></i> Popular Teams</h3>
+                
                 <div class="popular-teams">
-                    <img src="https://static.flashscore.com/res/image/data/Me3pW6Ea-GM4Cu0wi.png" alt="Team Image">
-                    <div class="team-name">ΠΑΝΑΘΗΝΑΙΚΟΣ</div>
+                    <img src="https://static.flashscore.com/res/image/data/Me3pW6Ea-GM4Cu0wi.png" alt="PAO">
+                    <div class="team-name">Panathinaikos</div>
                 </div>
                 <div class="popular-teams">
-                    <img src="https://static.flashscore.com/res/image/data/C6DyywyB-lzmp9FUJ.png" alt="Team Image">
-                    <div class="team-name">ΟΛΥΜΠΙΑΚΟΣ</div>
+                    <img src="https://static.flashscore.com/res/image/data/C6DyywyB-lzmp9FUJ.png" alt="OLY">
+                    <div class="team-name">Olympiacos</div>
                 </div>
                 <div class="popular-teams">
-                    <img src="https://static.flashscore.com/res/image/data/vHCp8QeM-Aq4Rjd2q.png" alt="Team Image">
-                    <div class="team-name">ΑΕΚ</div>
+                    <img src="https://static.flashscore.com/res/image/data/vHCp8QeM-Aq4Rjd2q.png" alt="AEK">
+                    <div class="team-name">AEK Athens</div>
                 </div>
                 <div class="popular-teams">
-                    <img src="https://static.flashscore.com/res/image/data/Gr0cGteM-KCp4zq5F.png" alt="Team Image">
-                    <div class="team-name">ΛΙΒΕΡΠΟΥΛ</div>
-                </div>
-                <div class="popular-teams">
-                    <img src="https://static.flashscore.com/res/image/data/YHTmTVGG-0vzI4JeD.png" alt="Team Image">
-                    <div class="team-name">ΠΑΝΑΘΗΝΑΙΚΟΣ</div>
-                </div>
-                <div class="popular-teams">
-                    <img src="https://static.flashscore.com/res/image/data/fuhlT5Ca-EgUjHr7n.png" alt="Team Image">
-                    <div class="team-name">ΟΛΥΜΠΙΑΚΟΣ</div>
+                    <img src="https://static.flashscore.com/res/image/data/Gr0cGteM-KCp4zq5F.png" alt="LIV">
+                    <div class="team-name">Liverpool</div>
                 </div>
             </div>
         </div>
@@ -143,7 +142,9 @@
     <script>
         function toggleNavbar() {
             const navbarLinks = document.querySelector('.navbar-links');
+            const toggleBtn = document.querySelector('.navbar-toggle');
             navbarLinks.classList.toggle('active');
+            toggleBtn.classList.toggle('open');
         }
 
         function filterNews() {
@@ -152,15 +153,22 @@
 
             newsItems.forEach(item => {
                 const title = item.getAttribute('data-title').toLowerCase();
-                if (title.includes(searchQuery)) {
-                    item.style.display = 'flex'; // Show matching items
+                const desc = item.querySelector('.description').innerText.toLowerCase();
+                // Search in both title and description
+                if (title.includes(searchQuery) || desc.includes(searchQuery)) {
+                    item.style.display = 'flex';
                 } else {
-                    item.style.display = 'none'; // Hide non-matching items
+                    item.style.display = 'none';
                 }
             });
         }
-        document.querySelector('.search-button').addEventListener('click', filterNews);
-        filterNews();
+        
+        // Add Enter key support for search
+        document.getElementById('searchBar').addEventListener("keypress", function(event) {
+          if (event.key === "Enter") {
+            filterNews();
+          }
+        });
     </script>
 </body>
 </html>

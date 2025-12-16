@@ -1,92 +1,157 @@
+:root {
+    --primary-blue: #3b82f6; /* Modern Bright Blue */
+    --hover-gold: #fbbf24;
+    --dark-bg: #0f172a; /* Slate 900 */
+    --nav-bg: rgba(15, 23, 42, 0.95); /* Semi-transparent */
+    --text-white: #f8fafc;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-white);
+    line-height: 1.6;
+}
+
 /* Navigation Bar */
 .navbar {
-	width: 100%;
-	background-color: rgb(25, 108, 217);
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	padding: 10px 0;
+    width: 100%;
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid #334155;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(8px); /* Blur effect behind navbar */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
+
 .navbar-content {
-	max-width: 800px;
-	margin: 0 auto;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0 20px;
+    max-width: 1200px; /* Wider container */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
 }
+
 .navbar img {
-	height: 50px;
+    height: 45px;
+    transition: transform 0.3s ease;
 }
+
+.navbar img:hover {
+    transform: scale(1.05);
+}
+
 .navbar-links {
-	list-style-type: none;
-	display: flex;
-	margin: 0;
-	padding: 0;
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
 }
-.navbar-links li {
-	margin: 0 15px;
-}
+
 .navbar-links a {
-	font-weight: bold;
-	text-decoration: none;
-	color: white;
-	font-size: 18px;
-	transition: color 0.3s ease;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #cbd5e1;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
 }
-.navbar-links a:hover {
-	color: #FFD700;
+
+.navbar-links a:hover, .navbar-links a.active {
+    color: var(--primary-blue);
 }
+
+/* Underline animation */
+.navbar-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--primary-blue);
+    transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+    width: 100%;
+}
+
+/* Mobile Toggle */
 .navbar-toggle {
-	display: none;
-	flex-direction: column;
-	cursor: pointer;
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
 }
+
 .navbar-toggle span {
-	background-color: white;
-	height: 3px;
-	width: 25px;
-	margin: 3px 0;
+    background-color: white;
+    height: 3px;
+    width: 28px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
+
+/* Mobile Styling */
 @media (max-width: 800px) {
-	.navbar-content {
-		padding: 0 10px;
-	}
-	.navbar img {
-		height: 40px;
-	}
-	.navbar-links {
-		display: none;
-		flex-direction: column;
-		background-color: white;
-		position: absolute;
-		top: 60px;
-		right: 0;
-		width: auto;
-		max-width: 200px;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		border-radius: 8px;
-		padding: 0;
-		margin: 0;
-	}
-	.navbar-links.active {
-		display: flex;
-	}
-	.navbar-toggle {
-		display: flex;
-	}
-	.navbar-links li {
-		margin: 0;
-		padding: 2px 0;
-		text-align: left;
-	}
-	.navbar-links a {
-		color: #333;
-		font-size: 18px;
-		font-weight: bold;
-		padding: 5px 10px;
-		display: block;
-		text-decoration: none;
-	}
-	.navbar-links a:hover {
-		color: #FFD700;
-	}
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        background-color: #1e293b; /* Dark Card Color */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+        padding: 20px 0;
+        gap: 0;
+    }
+
+    .navbar-links.active {
+        display: flex;
+        animation: slideDown 0.3s ease-out;
+    }
+
+    .navbar-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-links a {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid #334155;
+    }
+    
+    .navbar-links a:hover {
+        background-color: #334155;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    /* Hamburger Animation */
+    .navbar-toggle.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    .navbar-toggle.open span:nth-child(2) {
+        opacity: 0;
+    }
+    .navbar-toggle.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

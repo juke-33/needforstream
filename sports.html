@@ -4,110 +4,35 @@
     <title>NEEDFORSTREAM - Sports</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NEEDFORSTREAM - Sports">
+    <meta name="description" content="NEEDFORSTREAM - Sports Schedule">
+    
     <meta property="og:title" content="NEEDFORSTREAM - Sports">
-    <meta property="og:description" content="Sports">
+    <meta property="og:description" content="Watch Live Sports">
     <meta property="og:image" content="https://juke-33.github.io/needforstream/photos/needforstream3.png">
     <meta property="og:url" content="https://juke-33.github.io/needforstream/sports.html">
     <meta property="og:type" content="website">
 
     <link rel="icon" href="./photos/needforstream2.png" type="image/x-icon">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="./styles/nav.css">
     <link rel="stylesheet" href="./styles/sports.css">
     <link rel="stylesheet" href="./styles/scrollbar.css">
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #1a2327;
-            color: white;
-            line-height: 1.6;
-        }
-
-        /* ALERT BOX */
-        #popup-box {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        .popup-content {
-            background-color: #1a2327;
-            color: white;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 90%;
-            width: 400px;
-        }
-        .popup-content a {
-            color: #0dcaf0;
-            text-decoration: none;
-        }
-        .popup-content a:hover {
-            text-decoration: underline;
-        }
-        .popup-content button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            border: none;
-            background-color: #dc3545;
-            color: white;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .popup-content button:hover {
-            background-color: #c82333;
-        }
-
-        /* IFRAME */
-        .iframe-container {
-            position: relative;
-            width: 100%;
-        }
-        .close-iframe {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            color: black;
-            background-color: white;
-            border-radius: 50%;
-            width: 25px;
-            height: 25px;
-            text-align: center;
-            line-height: 25px;
-            font-size: 18px;
-            cursor: pointer;
-            z-index: 1000;
-            display: none;
-        }
-        .close-iframe:hover {
-            background-color: rgb(200, 200, 200);
-        }
-        .frame {
-            border-radius: 15px;
-            overflow: hidden;
-        }
-    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="navbar-content">
-            <img src="./photos/nfs.png" alt="NEEDFORSTREAM">
+            <a href="index.html" class="logo-link">
+                <img src="./photos/nfs.png" alt="NEEDFORSTREAM">
+            </a>
             <ul class="navbar-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="sports.html">Sports</a></li>
+                <li><a href="sports.html" class="active">Sports</a></li>
                 <li><a href="movies.html">Movies</a></li>
             </ul>
             <div class="navbar-toggle" onclick="toggleNavbar()">
@@ -118,171 +43,186 @@
         </div>
     </nav>
 
-    <div class="boxes">
-        <!-- Live Chat -->
-        <div class="box box-chat">
-            <div class="chat-container">
-                <script class="chat" id="cid0020000341707738062" data-cfasync="false" async="" src="//st.chatango.com/js/gz/emb.js" style="width: 100%; height: 450px;">{"handle":"needforstremgr","arch":"js","styles":{"a":"000000","b":100,"c":"FFFFFF","d":"FFFFFF","k":"000000","l":"000000","m":"000000","n":"FFFFFF","p":"10","q":"000000","r":100,"t":0,"ab":false,"usricon":0,"allowpm":0,"cnrs":"0.35"}}
+    <div class="container sports-layout">
+        
+        <div class="column-chat">
+            <h3 class="section-title"><i class="fas fa-comments"></i> Live Chat</h3>
+            <div class="chat-wrapper">
+                 <script class="chat" id="cid0020000341707738062" data-cfasync="false" async="" src="//st.chatango.com/js/gz/emb.js" style="width: 100%; height: 450px;">{"handle":"needforstremgr","arch":"js","styles":{"a":"1e293b","b":100,"c":"FFFFFF","d":"FFFFFF","k":"1e293b","l":"1e293b","m":"1e293b","n":"FFFFFF","p":"10","q":"1e293b","r":100,"t":0,"ab":false,"usricon":0,"allowpm":0,"cnrs":"0.35"}}
                 </script>
             </div>
 
-            <!-- Social Buttons -->
             <div class="social-buttons">
-                <a href="https://www.facebook.com/sharer/sharer.php?u=https://juke-33.github.io/needforstream/sports.html" target="_blank">
-                    <i class="fab fa-facebook-f"></i> <!-- Facebook Icon -->
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://juke-33.github.io/needforstream/sports.html" target="_blank" class="social-btn facebook">
+                    <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://m.me/?text=https://juke-33.github.io/needforstream/sports.html" target="_blank">
-                    <i class="fab fa-facebook-messenger"></i> <!-- Messenger Icon -->
+                <a href="https://m.me/?text=https://juke-33.github.io/needforstream/sports.html" target="_blank" class="social-btn messenger">
+                    <i class="fab fa-facebook-messenger"></i>
                 </a>
-                <a href="https://t.me/share/url?url=https://juke-33.github.io/needforstream/sports.html" target="_blank">
-                    <i class="fab fa-telegram-plane"></i> <!-- Telegram Icon -->
+                <a href="https://t.me/share/url?url=https://juke-33.github.io/needforstream/sports.html" target="_blank" class="social-btn telegram">
+                    <i class="fab fa-telegram-plane"></i>
                 </a>
-                <a href="https://twitter.com/intent/tweet?url=https://juke-33.github.io/needforstream/sports.html" target="_blank">
-                    <i class="fab fa-twitter"></i> <!-- Twitter Icon -->
+                <a href="https://twitter.com/intent/tweet?url=https://juke-33.github.io/needforstream/sports.html" target="_blank" class="social-btn twitter">
+                    <i class="fab fa-twitter"></i>
                 </a>
-                <a href="https://discord.com/channels/@me?text=https://juke-33.github.io/needforstream/sports.html" target="_blank">
-                    <i class="fab fa-discord"></i> <!-- Discord Icon -->
+                <a href="https://discord.com/channels/@me?text=https://juke-33.github.io/needforstream/sports.html" target="_blank" class="social-btn discord">
+                    <i class="fab fa-discord"></i>
                 </a>
             </div>
         </div>
 
-        <!-- ΠΡΟΓΡΑΜΜΑ -->
-        <div class="box box-sports">
-            <h2 class="date" id="greek-date"></h2>
+        <div class="column-matches">
+            <h2 class="date-header" id="greek-date"></h2>
 
-            <div class="championship-info">
-                <img src="./photos/super-league.png" class="championship-photo">
-                <h2 class="title">Super League</h2>
+            <div class="competition-header">
+                <img src="./photos/greek-cup.png">
+                <span>Greek Cup</span>
             </div>
-            <div class="game-info-box">
-                <div class="game-info">
-                    <div class="team-info">
-                        <img src="https://static.flashscore.com/res/image/data/KQW4V6FG-pvWT1yik.png" style="width: 40px; height: 40px; float: left; margin-right: 10px; border-radius: 12px;">
-                        <p style="margin-left: 60px;">PAOK</p>
-                    </div>
-                    <h style="padding: 7px;border: 1px solid #6c757d; border-radius: 15px;">20:30</h>
-                    <div class="team-info">
-                        <img src="https://static.flashscore.com/res/image/data/C6DyywyB-lzmp9FUJ.png" style="width: 40px; height: 40px; float: right; margin-left: 10px; border-radius: 12px;">
-                        <p style="margin-right: 60px;">OLY</p>
-                    </div>
-                </div>
-                <div class="buttons">
-                    <a class="button" href="https://foothubhd.online/cdn3/linka.php">🔗Link1</a>
-                    <a class="button" href="https://vuen.link/ch?id=25">🔗Link2</a>
-                    <a class="button" href="https://sportzonline.st/channels/hd/hd10.php">🔗Link3</a>
-                </div>
-                <div class="iframe-container">
-                    <span class="close-iframe">&times;</span> <!-- Close button -->
-                    <iframe
-                        class="frame" autoplay="false" allowfullscreen="true" scrolling="no" frameborder="0"
-                        width="100%" height="320px" src="" style="display: none;">
-                    </iframe>
-                </div>
-            </div>
-            <!-- ΤΕΛΟΣ ΠΡΟΓΡΑΜΜΑΤΟΣ -->
 
-            <!-- ΑΛΛΑ SITE -->
-            <p>OTHER STREAMING SITES ⤵️</p>
-            <div class="buttons">
-                <a class="button" target="_blank" href="https://foothubhd.online/">🌐Foothubhd</a>
-                <a class="button" target="_blank" href="https://onlive.sx/list">🌐Onlive</a>
-                <a class="button" target="_blank" href="https://streamysport.net/">🌐Streamysport</a>
+            <div class="match-card">
+                <div class="match-info">
+                    <div class="team home">
+                        <img src="https://static.flashscore.com/res/image/data/6Dzl3bWg-8EvGGttj.png">
+                        <span class="team-name">Kavala</span>
+                    </div>
+                    
+                    <div class="match-time">
+                        <span class="time-badge">16:00</span>
+                        <span class="vs">VS</span>
+                    </div>
+
+                    <div class="team away">
+                        <img src="https://static.flashscore.com/res/image/data/Me3pW6Ea-GM4Cu0wi.png">
+                        <span class="team-name">Panathinaikos</span>
+                    </div>
+                </div>
+
+                <div class="stream-buttons">
+                    <a class="btn-stream" href="https://foothublive.top/cdn3/linka.php"><i class="fas fa-play"></i> Link 1</a>
+                    <a class="btn-stream" href="https://vuen.link/ch?id=23"><i class="fas fa-play"></i> Link 2</a>
+                    <a class="btn-stream" href="https://sportsonline.click/channels/hd/hd3.php"><i class="fas fa-play"></i> Link 3</a>
+                </div>
+
+                <div class="iframe-wrapper">
+                    <span class="close-iframe"><i class="fas fa-times"></i> Close Stream</span>
+                    <iframe class="frame" allowfullscreen="true" scrolling="no" frameborder="0" src=""></iframe>
+                </div>
             </div>
-            <div class="buttons">
-                <a class="button" target="_blank" href="https://sportsonline.sn/prog.txt">🌐Sportsonline</a>
-                <a class="button" target="_blank" href="https://matchstream.do/viewer">🌐Matchstream</a>
+
+            <div class="competition-header">
+                <img src="./photos/greek-cup.png">
+                <span>Greek Cup</span>
             </div>
-            <!-- ΤΕΛΟΣ ΑΛΛΩΝ SITE -->
-			
-			<!--
-			<iframe
-            	class="frame" id="frame" autoplay="true" allowfullscreen="true" scrolling="no" frameborder="0"
-                width="98%" height="320px" src="https://foothubhd.live/greekchannels/mega.html">
-        	</iframe><br>
-			-->
-            
-            <br><center style="margin-bottom: -3rem; margin-top: -2rem;"><p>&copy; 2025 NEEDFORSTREAM</p></center><br>
+
+            <div class="match-card">
+                <div class="match-info">
+                    <div class="team home">
+                        <img src="https://static.flashscore.com/res/image/data/C6DyywyB-lzmp9FUJ.png">
+                        <span class="team-name">Olympiacos</span>
+                    </div>
+                    
+                    <div class="match-time">
+                        <span class="time-badge">18:00</span>
+                        <span class="vs">VS</span>
+                    </div>
+
+                    <div class="team away">
+                        <img src="https://static.flashscore.com/res/image/data/z12aOWcM-2V0U0cEB.png">
+                        <span class="team-name">Iraklis</span>
+                    </div>
+                </div>
+
+                <div class="stream-buttons">
+                    <a class="btn-stream" href="https://foothublive.top/cdn3/linkb.php"><i class="fas fa-play"></i> Link 1</a>
+                    <a class="btn-stream" href="https://vuen.link/ch?id=24"><i class="fas fa-play"></i> Link 2</a>
+                    <a class="btn-stream" href="https://sportsonline.click/channels/hd/hd4.php"><i class="fas fa-play"></i> Link 3</a>
+                </div>
+
+                <div class="iframe-wrapper">
+                    <span class="close-iframe"><i class="fas fa-times"></i> Close Stream</span>
+                    <iframe class="frame" allowfullscreen="true" scrolling="no" frameborder="0" src=""></iframe>
+                </div>
+            </div>
+
+            <div class="other-sites">
+                <h3><i class="fas fa-globe"></i> Other Streaming Sites</h3>
+                <div class="sites-grid">
+                    <a class="btn-site" target="_blank" href="https://foothublive.top/">Foothubhd</a>
+                    <a class="btn-site" target="_blank" href="https://onlive.sx/list">Onlive</a>
+                    <a class="btn-site" target="_blank" href="https://sosplay.net/">Sosplay</a>
+                    <a class="btn-site" target="_blank" href="https://sportsonline.sn/prog.txt">Sportsonline</a>
+                    <a class="btn-site" target="_blank" href="https://matchstream.do/viewer">Matchstream</a>
+                    <a class="btn-site" target="_blank" href="https://dad.daddylivehd1.my/">Daddylive</a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 NEEDFORSTREAM</p>
+            </div>
         </div>
 
-        <!-- Sponsors -->
-        <div class="box box-sponsors">
-            <h3 class="sponsor">Sponsors</h3>
-            <img src="./photos/IceGhetto.png" alt="" width="100%" style="border-radius: 15px;">
-            <img src="./photos/Engibeers.jpg" alt="" width="100%" style="border-radius: 15px;">
-            <img src="./photos/yap.png" alt="" width="100%" style="border-radius: 15px;">
+        <div class="column-sponsors">
+            <h3 class="section-title"><i class="fas fa-star"></i> Sponsors</h3>
+            <div class="sponsor-list">
+                <img src="./photos/IceGhetto.png" alt="Sponsor 1">
+                <img src="./photos/Engibeers.jpg" alt="Sponsor 2">
+                <img src="./photos/yap.png" alt="Sponsor 3">
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-box" style="display:none;">
+        <div class="popup-content">
+            <p>Welcome to NeedForStream!</p>
+            <button id="close-popup">Close</button>
         </div>
     </div>
 
     <script>
-        // Automatically change the date
+        // --- Date Logic ---
         const greekDays = ['ΚΥΡΙΑΚΗ', 'ΔΕΥΤΕΡΑ', 'ΤΡΙΤΗ', 'ΤΕΤΑΡΤΗ', 'ΠΕΜΠΤΗ', 'ΠΑΡΑΣΚΕΥΗ', 'ΣΑΒΒΑΤΟ'];
         const greekMonths = ['ΙΑΝΟΥΑΡΙΟΥ', 'ΦΕΒΡΟΥΑΡΙΟΥ', 'ΜΑΡΤΙΟΥ', 'ΑΠΡΙΛΙΟΥ', 'ΜΑΪΟΥ', 'ΙΟΥΝΙΟΥ', 'ΙΟΥΛΙΟΥ', 'ΑΥΓΟΥΣΤΟΥ', 'ΣΕΠΤΕΜΒΡΙΟΥ', 'ΟΚΤΩΒΡΙΟΥ', 'ΝΟΕΜΒΡΙΟΥ', 'ΔΕΚΕΜΒΡΙΟΥ'];
 
         const now = new Date();
-        const dayName = greekDays[now.getDay()];
-        const dayNumber = now.getDate();
-        const monthName = greekMonths[now.getMonth()];
-
-        const formattedDate = `📅 ${dayName} ${dayNumber} ${monthName}`;
+        const formattedDate = `📅 ${greekDays[now.getDay()]} ${now.getDate()} ${greekMonths[now.getMonth()]}`;
         document.getElementById('greek-date').textContent = formattedDate;
 
-        // Function to set the default iframe source and handle autoplay prevention
-        function setDefaultIframeSources() {
-            const gameInfoBoxes = document.querySelectorAll('.game-info-box');
-            gameInfoBoxes.forEach((box) => {
-                const buttons = box.querySelectorAll('.buttons .button');
-                const iframe = box.querySelector('.frame');
-                const closeButton = box.querySelector('.close-iframe');
-                if (buttons.length > 0) {
-                    // Append autoplay prevention query parameter
-                    const firstLink = buttons[0].href + (buttons[0].href.includes('?') ? '&' : '?') + 'autoplay=0';
-                    iframe.dataset.defaultSrc = firstLink; // Save the default src for later
-                }
-
-                // Add click event to close button
-                closeButton.addEventListener('click', () => {
-                    iframe.src = ''; // Clear the iframe source
-                    iframe.style.display = 'none'; // Hide the iframe
-                    closeButton.style.display = 'none'; // Hide the close button
-                });
-            });
-        }
-
-        // Function to update iframe visibility and source when a button is clicked
-        function setupButtonClickHandlers() {
-            const gameInfoBoxes = document.querySelectorAll('.game-info-box');
-            gameInfoBoxes.forEach((box) => {
-                const buttons = box.querySelectorAll('.buttons .button');
-                const iframe = box.querySelector('.frame');
-                const closeButton = box.querySelector('.close-iframe');
-                buttons.forEach((button) => {
-                    button.addEventListener('click', (event) => {
-                        event.preventDefault(); // Prevent default link behavior
-                        iframe.src = button.href + (button.href.includes('?') ? '&' : '?') + 'autoplay=0'; // Update src
-                        iframe.style.display = 'block'; // Unhide iframe
-                        closeButton.style.display = 'block'; // Show close button
-                    });
-                });
-            });
-        }
-
-        // Hide all iframes initially and set up handlers
-        setDefaultIframeSources();
-        setupButtonClickHandlers();
-
+        // --- Navbar Logic ---
         function toggleNavbar() {
             const navbarLinks = document.querySelector('.navbar-links');
+            const toggleBtn = document.querySelector('.navbar-toggle');
             navbarLinks.classList.toggle('active');
+            toggleBtn.classList.toggle('open');
         }
 
-        window.onload = function() {
-            const popup = document.getElementById('popup-box');
-            const closeButton = document.getElementById('close-popup');
+        // --- Iframe Logic ---
+        function setupIframes() {
+            const matchCards = document.querySelectorAll('.match-card');
+            
+            matchCards.forEach((card) => {
+                const buttons = card.querySelectorAll('.btn-stream');
+                const iframeWrapper = card.querySelector('.iframe-wrapper');
+                const iframe = card.querySelector('.frame');
+                const closeBtn = card.querySelector('.close-iframe');
 
-            closeButton.onclick = function() {
-                popup.style.display = 'none';
-            };
-        };
+                buttons.forEach((btn) => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        // Add Autoplay=0 logic
+                        const url = btn.href + (btn.href.includes('?') ? '&' : '?') + 'autoplay=0';
+                        iframe.src = url;
+                        iframeWrapper.classList.add('active'); // Show iframe
+                    });
+                });
+
+                closeBtn.addEventListener('click', () => {
+                    iframe.src = ''; // Stop video
+                    iframeWrapper.classList.remove('active'); // Hide iframe
+                });
+            });
+        }
+
+        setupIframes();
     </script>
 </body>
 </html>

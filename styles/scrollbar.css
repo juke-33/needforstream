@@ -1,15 +1,18 @@
 /* Webkit Scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
 }
+
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 15px;
+    background: #0f172a; /* Matches body background */
 }
+
 ::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
+    background: #475569; /* Slate 600 */
+    border-radius: 5px;
+    border: 2px solid #0f172a; /* Creates padding effect */
 }
+
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: #3b82f6; /* Blue on hover */
 }
