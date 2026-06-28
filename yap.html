@@ -4,279 +4,470 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="./photos/yap.png" type="image/x-icon" />
-  <title>yap</title>
-  <meta name="description" content="yap">
+  <title>yap — chat, freely</title>
+  <meta name="description" content="yap — a brand new chat app">
   <meta property="og:title" content="yap">
-  <meta property="og:description" content="yap">
+  <meta property="og:description" content="yap — chat, freely">
   <meta property="og:image" content="https://juke-33.github.io/needforstream/photos/yap.png">
   <meta property="og:url" content="https://juke-33.github.io/needforstream/yap.html">
   <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0D0F1A;
+      --surface:  #16192A;
+      --border:   #252840;
+      --muted:    #3A3D5C;
+      --text:     #F0EEFF;
+      --sub:      #9898BC;
+      --accent:   #7C4DFF;
+      --accent2:  #B47AFF;
+      --green:    #3DDC84;
+    }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 48px;
+      background: rgba(13,15,26,0.72);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(124,77,255,0.08);
+    }
+
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700; font-size: 1.4rem; letter-spacing: -0.04em;
+      color: var(--text);
+    }
+    .nav-logo span { color: var(--accent); }
+
+    nav a {
+      color: var(--sub); text-decoration: none; font-size: 0.875rem;
+      font-weight: 500; transition: color 0.2s;
+    }
+    nav a:hover { color: var(--text); }
+
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+
+    .nav-cta {
+      background: var(--accent) !important; color: var(--text) !important;
+      padding: 8px 20px; border-radius: 100px; font-size: 0.85rem !important;
+    }
+    .nav-cta:hover { background: var(--accent2) !important; color: var(--text) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
       text-align: center;
-      background-color: #f9f9f9;
-      color: #333;
+      padding: 120px 24px 80px;
+      position: relative; overflow: hidden;
     }
 
-    .download-buttons {
-      margin: 30px 0;
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 30%, rgba(124,77,255,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 30% at 20% 80%, rgba(61,220,132,0.07) 0%, transparent 60%);
+      pointer-events: none;
     }
 
-    .download-buttons a {
-      text-decoration: none;
-      display: inline-block;
-      padding: 12px 24px;
-      margin: 10px;
-      border-radius: 6px;
-      font-size: 1em;
-      font-weight: bold;
-      color: white;
-      transition: background 0.3s ease;
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(124,77,255,0.12); border: 1px solid rgba(124,77,255,0.3);
+      border-radius: 100px; padding: 6px 16px; margin-bottom: 32px;
+      font-size: 0.78rem; font-weight: 500; color: var(--accent2);
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 6px var(--green);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
     }
 
-    .android-btn, .ios-btn {
-      background-color: #3DDC84;
+    .hero-wordmark {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(6rem, 20vw, 16rem);
+      font-weight: 700;
+      letter-spacing: -0.06em;
+      line-height: 0.85;
+      margin-bottom: 28px;
+      background: linear-gradient(135deg, #fff 30%, var(--accent2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
     }
 
-    .android-btn:hover, .ios-btn:hover {
-      background-color: #2fc172;
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--sub); max-width: 480px; line-height: 1.6;
+      margin-bottom: 48px;
     }
 
-    .screenshots {
-      margin-top: 40px;
+    .dl-group {
+      display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
     }
 
-    .screenshots img {
-      max-width: 200px;
-      margin: 10px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 28px; border-radius: 12px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600; font-size: 0.95rem;
+      text-decoration: none; transition: all 0.2s;
+      border: none; cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--accent); color: #fff;
+      box-shadow: 0 0 32px rgba(124,77,255,0.4);
+    }
+    .btn-primary:hover {
+      background: var(--accent2);
+      box-shadow: 0 0 48px rgba(124,77,255,0.6);
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      background: var(--surface); color: var(--sub);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--muted); color: var(--text); transform: translateY(-1px); }
+
+    .btn-icon { font-size: 1.2rem; }
+
+    .version-pill {
+      display: inline-block; margin-top: 24px;
+      color: var(--sub); font-size: 0.8rem;
+    }
+    .version-pill strong { color: var(--green); }
+
+    /* ── SCREENSHOTS ── */
+    .section { padding: 96px 24px; }
+    .section-label {
+      text-align: center; margin-bottom: 56px;
+    }
+    .section-label h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700; letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+    .section-label p { color: var(--sub); font-size: 1rem; }
+
+    .carousel-wrap {
+      overflow: hidden; position: relative; max-width: 100%;
+    }
+
+    .carousel-track {
+      display: flex; gap: 20px;
+      padding: 16px 48px;
+      overflow-x: auto; scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .carousel-track::-webkit-scrollbar { display: none; }
+
+    .carousel-track img {
+      flex: 0 0 auto;
+      height: 520px; width: auto;
+      border-radius: 20px;
+      scroll-snap-align: center;
+      border: 1px solid var(--border);
       cursor: pointer;
-      transition: transform 0.3s;
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .carousel-track img:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 16px 48px rgba(124,77,255,0.25);
     }
 
-    .screenshots img:hover {
-      transform: scale(1.05);
+    .carousel-dots {
+      display: flex; justify-content: center; gap: 8px; margin-top: 24px;
+    }
+    .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--border); transition: all 0.2s; cursor: pointer;
+    }
+    .dot.active { background: var(--accent); width: 20px; border-radius: 3px; }
+
+    /* ── CHANGELOG ── */
+    .changelog-section { padding: 96px 24px; }
+
+    .changelog-inner {
+      max-width: 720px; margin: 0 auto;
     }
 
-    /* Lightbox styles */
+    .timeline { position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 86px; top: 0; bottom: 0;
+      width: 1px; background: var(--border);
+    }
+
+    .tl-item {
+      display: grid; grid-template-columns: 86px 1fr;
+      gap: 0 24px; margin-bottom: 48px; position: relative;
+    }
+
+    .tl-version {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700; font-size: 0.8rem;
+      color: var(--accent2); text-align: right;
+      padding-top: 2px; padding-right: 24px;
+      letter-spacing: 0.02em;
+    }
+
+    .tl-dot {
+      position: absolute; left: 82px; top: 5px;
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(124,77,255,0.5);
+      border: 2px solid var(--bg);
+    }
+    .tl-item:first-child .tl-dot {
+      background: var(--green);
+      box-shadow: 0 0 10px rgba(61,220,132,0.6);
+    }
+
+    .tl-content { padding-left: 10px; }
+
+    .tl-date {
+      font-size: 0.75rem; color: var(--muted);
+      margin-bottom: 8px; margin-top: 4px;
+    }
+
+    .tl-changes {
+      display: flex; flex-direction: column; gap: 5px;
+    }
+
+    .tl-change {
+      font-size: 0.875rem; color: var(--sub); line-height: 1.5;
+      display: flex; align-items: baseline; gap: 8px;
+    }
+    .tl-change::before {
+      content: '—'; color: var(--muted); flex-shrink: 0; font-size: 0.75rem;
+    }
+    .tl-item:first-child .tl-change { color: var(--text); }
+
+    /* ── LIGHTBOX ── */
     .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.85);
-      justify-content: center;
-      align-items: center;
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: rgba(0,0,0,0.9);
+      justify-content: center; align-items: center;
+      backdrop-filter: blur(8px);
     }
-
+    .lightbox.show { display: flex; }
     .lightbox img {
-      max-width: 90%;
-      max-height: 80vh;
-      border-radius: 10px;
+      max-width: 92vw; max-height: 88vh;
+      border-radius: 16px; box-shadow: 0 0 80px rgba(124,77,255,0.2);
+    }
+    .lightbox-close {
+      position: fixed; top: 24px; right: 28px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text); font-size: 1.2rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .lightbox-close:hover { background: var(--muted); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+      color: var(--muted); font-size: 0.8rem;
+    }
+    .footer-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700; color: var(--text);
+    }
+    .footer-logo span { color: var(--accent); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 14px 20px; }
+      .nav-links { gap: 20px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+
+      .carousel-track { padding: 16px 20px; }
+      .carousel-track img { height: 380px; }
+
+      .timeline::before { left: 64px; }
+      .tl-item { grid-template-columns: 64px 1fr; }
+      .tl-version { font-size: 0.72rem; padding-right: 16px; }
+      .tl-dot { left: 60px; }
+
+      footer { padding: 32px 20px; flex-direction: column; text-align: center; }
     }
 
-    .lightbox.show {
-      display: flex;
-    }
-
-    .version-log {
-      margin-top: 40px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: left;
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .version-log h2 {
-      font-size: 1.8em;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-    }
-
-    .version-log ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .version-log li {
-      margin-bottom: 10px;
-    }
-
-    .version-log strong {
-      color: #3DDC84;
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
     }
   </style>
 </head>
 <body>
-  <h1>Download my brand new chat app!</h1>
 
-  <div class="download-buttons">
-    <div style="display: inline-block; margin: 10px;">
-      <img src="photos/yap.png" alt="App Icon" style="width: 100px; height: 100px; border-radius: 20px; object-fit: contain; margin-bottom: 10px;">
-      <br>
-      <a href="https://drive.google.com/uc?export=download&id=1ZD1ODcbG9fkAiLcxl1NEMeR9kRf8iI1S" class="android-btn" download>Android</a>
-      <a href="" class="ios-btn">iOS (soon)</a>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">
+	  <img src="./photos/yap.png" alt="yap logo" style="height: 50px; vertical-align: middle; margin-right: 8px;">
+	</div>
+    <div class="nav-links">
+      <a href="#screenshots">Screenshots</a>
+      <a href="#changelog">Changelog</a>
+      <a href="https://drive.google.com/uc?export=download&id=1ZD1ODcbG9fkAiLcxl1NEMeR9kRf8iI1S" class="btn nav-cta" download>Download</a>
     </div>
-  </div>
+  </nav>
 
-  <div class="screenshots">
-    <img src="yap/screenshot1.jfif" alt="Screenshot 1" onclick="openLightbox(this.src)">
-    <img src="yap/screenshot2.jfif" alt="Screenshot 2" onclick="openLightbox(this.src)">
-    <img src="yap/screenshot3.jfif" alt="Screenshot 3" onclick="openLightbox(this.src)">
-    <img src="yap/screenshot4.jfif" alt="Screenshot 4" onclick="openLightbox(this.src)">
-    <img src="yap/screenshot5.jfif" alt="Screenshot 5" onclick="openLightbox(this.src)">
-    <img src="yap/screenshot6.jfif" alt="Screenshot 6" onclick="openLightbox(this.src)">
-    <img src="yap/screenshot7.jfif" alt="Screenshot 7" onclick="openLightbox(this.src)">
-    <img src="yap/screenshot8.jfif" alt="Screenshot 8" onclick="openLightbox(this.src)">
-    <img src="yap/screenshot9.jfif" alt="Screenshot 9" onclick="openLightbox(this.src)">
-  </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      v7.0.0 — Now available
+    </div>
+    <h1 class="hero-wordmark">
+	  <img style="height: 1.0em; vertical-align: middle; margin-right: 16px;">
+	  yap 
+	</h1>
+    <p class="hero-sub">A chat app built for real conversations. Posts, friends, group chats — all in one place.</p>
+    <div class="dl-group">
+      <a href="https://drive.google.com/uc?export=download&id=1ZD1ODcbG9fkAiLcxl1NEMeR9kRf8iI1S" class="btn btn-primary" download>
+        <span</span> Download for Android
+      </a>
+      <a href="#" class="btn btn-ghost">
+        <span class="btn-icon">🍎</span> iOS — coming soon
+      </a>
+    </div>
+    <p class="version-pill">Latest release: <strong>v7.0.0</strong> · June 29, 2026</p>
+  </section>
 
-  <!-- Lightbox -->
+  <!-- SCREENSHOTS -->
+  <section class="section" id="screenshots">
+    <div class="section-label">
+      <h2>See it in action</h2>
+      <p>Swipe through to explore the app</p>
+    </div>
+    <div class="carousel-wrap">
+      <div class="carousel-track" id="carousel">
+        <img src="yap/screenshot1.jpg" alt="Screenshot 1" onclick="openLightbox(this.src)">
+        <img src="yap/screenshot2.jpg" alt="Screenshot 2" onclick="openLightbox(this.src)">
+        <img src="yap/screenshot3.jpg" alt="Screenshot 3" onclick="openLightbox(this.src)">
+        <img src="yap/screenshot4.jpg" alt="Screenshot 4" onclick="openLightbox(this.src)">
+        <img src="yap/screenshot5.jpg" alt="Screenshot 5" onclick="openLightbox(this.src)">
+        <img src="yap/screenshot6.jpg" alt="Screenshot 6" onclick="openLightbox(this.src)">
+        <img src="yap/screenshot7.jpg" alt="Screenshot 7" onclick="openLightbox(this.src)">
+        <img src="yap/screenshot8.jpg" alt="Screenshot 8" onclick="openLightbox(this.src)">
+      </div>
+    </div>
+    <div class="carousel-dots" id="dots"></div>
+  </section>
+
+  <!-- CHANGELOG -->
+  <section class="changelog-section" id="changelog">
+    <div class="section-label">
+      <h2>What's changed</h2>
+      <p>Every update, every version</p>
+    </div>
+    <div class="changelog-inner">
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox({force:true})">✕</button>
     <img id="lightbox-img" src="" alt="Zoomed screenshot">
   </div>
 
-  <!-- Version Release Log -->
-  <div class="version-log">
-    <h2>Version Releases</h2>
-    <ul>
-      <li>
-        <strong>v5.1.0</strong> – October 16, 2025
-        <br>
-        - Added push notifications on messages
-        <br>
-        - Changed icons
-        <br>
-        - Removed copy post text
-        <br>
-        - Changed Add Post position
-        <br>
-        - Fixed chat page scroll & typing
-        <br>
-        - Major styling changes & fixes
-        <br>
-      </li>
-      <li>
-        <strong>v5.0.0</strong> – October 03, 2025
-        <br>
-        - Added yappy pet
-        <br>
-        - Streaks Leaderboard fixed
-        <br>
-        - Add Friend button on profile
-      </li>
-      <li>
-        <strong>v4.1.0</strong> – September 25, 2025
-        <br>
-        - Image reloading bug fixed
-        <br>
-        - Streaks logic fixed
-        <br>
-        - Comment bug fixed
-        <br>
-        - Streaks Leaderboard
-      </li>
-      <li>
-        <strong>v4.0.0</strong> – September 24, 2025
-        <br>
-        - Streaks
-        <br>
-        - Comment editing
-        <br>
-        - Fixed null text
-        <br>
-        - Fixed permissions bug
-        <br>
-        - Speperate chats
-        <br>
-        - Chat information
-        <br>
-        - Delete chat
-      </li>
-      <li>
-        <strong>v3.0.0</strong> – August 19, 2025
-        <br>
-        - Navigation bar with pages
-        <br>
-        - Settings Page
-        <br>
-        - Post Upload & Management options
-        <br>
-        - Account Handling & Recovery
-        <br>
-        - Users list
-        <br>
-        - Friend requests
-        <br>
-        - Private chat with friends
-        <br>
-        - Major styling changes & fixes
-      </li>
-      <li>
-        <strong>v2.0.0</strong> – Aug 4, 2025
-        <br>
-        - Posts on profile.
-        <br>
-        - Guide & Help page.
-        <br>
-        - Posts editable.
-        <br>
-        - Minor styling changes & fixes.
-      </li>
-      <li>
-        <strong>v1.2.0</strong> – July 27, 2025
-        <br>
-        - Message image clickable & zoomable.
-        <br>
-        - New post prompts.
-        <br>
-        - Image preview before upload & handling.
-        <br>
-        - Minor styling changes & fixes.
-      </li>
-      <li>
-        <strong>v1.1.0</strong> – May 20, 2025
-        <br>
-        - Push notifications.
-        <br>
-        - Post input field styling.
-        <br>
-        - Now users can post images.
-        <br>
-        - Bio multiline typing, profile image change option.
-        <br>
-        - Profile images are being displayed everywhere.
-      </li>
-      <li>
-        <strong>v1.0.2</strong> – May 19, 2025
-        <br>
-        - Replace post & comment creator email with username.
-        <br>
-        - Fixed date format.
-      </li>
-      <li>
-        <strong>v1.0.1</strong> – May 16, 2025
-        <br>
-        - Added view / hide comments functionality.
-      </li>
-      <li>
-        <strong>v1.0.0</strong> – May 15, 2025
-        <br>
-        - Initial release of yap chat app!
-      </li>
-    </ul>
-  </div>
+  <footer>
+    <div class="footer-logo">
+	  <img src="./photos/yap.png" alt="yap logo" style="height: 50px; vertical-align: middle; margin-right: 8px;">
+	</div>
+    <span>© 2026 yap</span>
+    <a href="https://drive.google.com/uc?export=download&id=1ZD1ODcbG9fkAiLcxl1NEMeR9kRf8iI1S" style="color:var(--accent);text-decoration:none;font-weight:600;" download>Download APK ↓</a>
+  </footer>
 
   <script>
+    // ── CHANGELOG DATA ──
+    const releases = [
+      { v: 'v7.0.0', date: 'June 29, 2026', changes: ['Feed Preference / Public - Friends','Fixed Image Upload Crash','Changed Add Post Page','Reset Database','Fixed Navigation Bar','Updated Guide Page','Save post image'] },
+      { v: 'v6.0.1', date: 'June 23, 2026', changes: ['Changed App Icon','Changed Navigation Bar','Changed Search Bars','Changed Chat Page Typing Section'] },
+      { v: 'v6.0.0', date: 'April 29, 2026', changes: ['Post Visibility option','Style Settings','Google Sign In/Up','Group Chats & Info','Major styling changes & fixes','Removed Thoughts page','Removed Streaks'] },
+      { v: 'v5.1.0', date: 'October 16, 2025', changes: ['Added push notifications on messages','Changed icons','Removed copy post text','Changed Add Post position','Fixed chat page scroll & typing','Major styling changes & fixes'] },
+      { v: 'v5.0.0', date: 'October 03, 2025', changes: ['Added yappy pet','Streaks Leaderboard fixed','Add Friend button on profile'] },
+      { v: 'v4.1.0', date: 'September 25, 2025', changes: ['Image reloading bug fixed','Streaks logic fixed','Comment bug fixed','Streaks Leaderboard'] },
+      { v: 'v4.0.0', date: 'September 24, 2025', changes: ['Streaks','Comment editing','Fixed null text','Fixed permissions bug','Separate chats','Chat information','Delete chat'] },
+      { v: 'v3.0.0', date: 'August 19, 2025', changes: ['Navigation bar with pages','Settings Page','Post Upload & Management options','Account Handling & Recovery','Users list','Friend requests','Private chat with friends','Major styling changes & fixes'] },
+      { v: 'v2.0.0', date: 'August 4, 2025', changes: ['Posts on profile','Guide & Help page','Posts editable','Minor styling changes & fixes'] },
+      { v: 'v1.2.0', date: 'July 27, 2025', changes: ['Message image clickable & zoomable','New post prompts','Image preview before upload & handling','Minor styling changes & fixes'] },
+      { v: 'v1.1.0', date: 'May 20, 2025', changes: ['Push notifications','Post input field styling','Users can post images','Bio multiline typing, profile image change option','Profile images displayed everywhere'] },
+      { v: 'v1.0.2', date: 'May 19, 2025', changes: ['Replace post & comment creator email with username','Fixed date format'] },
+      { v: 'v1.0.1', date: 'May 16, 2025', changes: ['Added view / hide comments functionality'] },
+      { v: 'v1.0.0', date: 'May 15, 2025', changes: ['Initial release of yap chat app!'] },
+    ];
+
+    const timeline = document.getElementById('timeline');
+    releases.forEach(r => {
+      const item = document.createElement('div');
+      item.className = 'tl-item';
+      item.innerHTML = `
+        <div class="tl-version">${r.v}</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-date">${r.date}</div>
+          <div class="tl-changes">
+            ${r.changes.map(c => `<div class="tl-change">${c}</div>`).join('')}
+          </div>
+        </div>`;
+      timeline.appendChild(item);
+    });
+
+    // ── CAROUSEL DOTS ──
+    const carousel = document.getElementById('carousel');
+    const dotsEl = document.getElementById('dots');
+    const imgs = carousel.querySelectorAll('img');
+    imgs.forEach((_, i) => {
+      const d = document.createElement('div');
+      d.className = 'dot' + (i === 0 ? ' active' : '');
+      d.onclick = () => { imgs[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' }); };
+      dotsEl.appendChild(d);
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const idx = [...imgs].indexOf(e.target);
+          dotsEl.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+        }
+      });
+    }, { root: carousel, threshold: 0.5 });
+    imgs.forEach(img => observer.observe(img));
+
+    // ── LIGHTBOX ──
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
 
@@ -284,20 +475,13 @@
       lightboxImg.src = src;
       lightbox.classList.add('show');
     }
-
-    function closeLightbox(event) {
-      if (event.target === lightbox || event.key === "Escape") {
+    function closeLightbox(e) {
+      if (e.force || e.target === lightbox) {
         lightbox.classList.remove('show');
         lightboxImg.src = '';
       }
     }
-
-    // Close with ESC key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeLightbox({ target: lightbox });
-      }
-    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox({ force: true }); });
   </script>
 </body>
 </html>
