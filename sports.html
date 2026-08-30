@@ -45,10 +45,12 @@
 
     <div class="container sports-layout">
         
+        <!-- Live Chat Column -->
         <div class="column-chat">
             <h3 class="section-title"><i class="fas fa-comments"></i> Live Chat</h3>
             <div class="chat-wrapper">
-                 <script class="chat" id="cid0020000341707738062" data-cfasync="false" async="" src="//st.chatango.com/js/gz/emb.js" style="width: 100%; height: 450px;">{"handle":"needforstremgr","arch":"js","styles":{"a":"1e293b","b":100,"c":"FFFFFF","d":"FFFFFF","k":"1e293b","l":"1e293b","m":"1e293b","n":"FFFFFF","p":"10","q":"1e293b","r":100,"t":0,"ab":false,"usricon":0,"allowpm":0,"cnrs":"0.35"}}
+                <script 
+                    class="chat" id="cid0020000449092372845" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 100%; height: 450px;">{"handle":"needforstream","arch":"js","styles":{"a":"1e293b","b":100,"c":"FFFFFF","d":"FFFFFF","k":"1e293b","l":"1e293b","m":"1e293b","n":"FFFFFF","p":"10","q":"1e293b","r":100,"t":0,"ab":false,"allowpm":0,"cnrs":"0.35","surl":0,"usricon":1}}
                 </script>
             </div>
 
@@ -62,15 +64,13 @@
                 <a href="https://t.me/share/url?url=https://juke-33.github.io/needforstream/sports.html" target="_blank" class="social-btn telegram">
                     <i class="fab fa-telegram-plane"></i>
                 </a>
-                <a href="https://twitter.com/intent/tweet?url=https://juke-33.github.io/needforstream/sports.html" target="_blank" class="social-btn twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
                 <a href="https://discord.com/channels/@me?text=https://juke-33.github.io/needforstream/sports.html" target="_blank" class="social-btn discord">
                     <i class="fab fa-discord"></i>
                 </a>
             </div>
         </div>
 
+        <!-- Matches Column -->
         <div class="column-matches">
             <h2 class="date-header" id="greek-date"></h2>
 
@@ -99,13 +99,13 @@
 
                 <div class="stream-buttons">
                     <a class="btn-stream" href="https://foothubhd.st/cdn3/linka.php"><i class="fas fa-play"></i> Link 1</a>
-                    <a class="btn-stream" href="https://foothublive.top/cdn3/linka.php"><i class="fas fa-play"></i> Link 2</a>
-                    <a class="btn-stream" href="https://s1.nexa.st/ch.php?id=23"><i class="fas fa-play"></i> Link 3</a>
-                    <a class="btn-stream" href="https://sportsonline.st/channels/hd/hd3.php"><i class="fas fa-play"></i> Link 4</a>
+                    <a class="btn-stream" href="https://s1.nexa.st/ch.php?id=23"><i class="fas fa-play"></i> Link 2</a>
+                    <a class="btn-stream" href="https://w2.sportsonlinee.click/channels/hd/hd5.php"><i class="fas fa-play"></i> Link 3</a>
+                    <a class="btn-stream" href="https://dlstreams.st/stream/stream-638.php"><i class="fas fa-play"></i> Link 4</a>
                 </div>
 
                 <div class="iframe-wrapper">
-                    <span class="close-iframe"><i class="fas fa-times"></i> Close Stream</span>
+                    <span class="close-iframe"><i class="fas fa-times"></i> Close</span>
                     <iframe class="frame" allowfullscreen="true" scrolling="no" frameborder="0" src=""></iframe>
                 </div>
             </div>
@@ -114,10 +114,10 @@
                 <h3><i class="fas fa-globe"></i> Other Streaming Sites</h3>
                 <div class="sites-grid">
                     <a class="btn-site" target="_blank" href="https://foothubhd.st/">Foothubhd</a>
-                    <a class="btn-site" target="_blank" href="https://foothublive.top/">Foothublive</a>
                     <a class="btn-site" target="_blank" href="https://onlive.sx/list">Onlive</a>
                     <a class="btn-site" target="_blank" href="https://sportsonline.st/prog.txt">Sportsonline</a>
                     <a class="btn-site" target="_blank" href="https://dlstreams.st/">Daddylive</a>
+                    <a class="btn-site" target="_blank" href="https://ppv.st/">PPV</a>
                 </div>
             </div>
 
@@ -126,13 +126,6 @@
             </div>
         </div>
 
-        <div class="column-sponsors">
-            <h3 class="section-title"><i class="fas fa-star"></i> Sponsors</h3>
-            <div class="sponsor-list">
-                <img src="./photos/IceGhetto.png" alt="Sponsor 1">
-                <img src="./photos/yap.png" alt="Sponsor 3">
-            </div>
-        </div>
     </div>
 
     <div id="popup-box" style="display:none;">
@@ -172,16 +165,15 @@
                 buttons.forEach((btn) => {
                     btn.addEventListener('click', (e) => {
                         e.preventDefault();
-                        // Add Autoplay=0 logic
                         const url = btn.href + (btn.href.includes('?') ? '&' : '?') + 'autoplay=0';
                         iframe.src = url;
-                        iframeWrapper.classList.add('active'); // Show iframe
+                        iframeWrapper.classList.add('active');
                     });
                 });
 
                 closeBtn.addEventListener('click', () => {
-                    iframe.src = ''; // Stop video
-                    iframeWrapper.classList.remove('active'); // Hide iframe
+                    iframe.src = '';
+                    iframeWrapper.classList.remove('active');
                 });
             });
         }

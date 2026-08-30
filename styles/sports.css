@@ -26,8 +26,7 @@ body {
 }
 
 .column-chat { flex: 0 0 300px; } /* Fixed width left */
-.column-matches { flex: 1; } /* Grow to fill middle */
-.column-sponsors { flex: 0 0 200px; } /* Fixed width right */
+.column-matches { flex: 1; } /* Grow to fill the rest of the space */
 
 /* --- Common Component Styles --- */
 .section-title {
@@ -251,7 +250,7 @@ body {
     padding: 20px;
     border-radius: 12px;
     border: 1px solid var(--border);
-    margin-top: 40px;
+    margin-top: 0px;
 }
 
 .other-sites h3 {
@@ -288,24 +287,6 @@ body {
     margin-top: 20px;
 }
 
-/* --- Sponsors Column --- */
-.sponsor-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.sponsor-list img {
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    transition: transform 0.3s;
-}
-
-.sponsor-list img:hover {
-    transform: scale(1.03);
-}
-
 /* --- Responsive Design --- */
 @media (max-width: 900px) {
     .sports-layout {
@@ -313,16 +294,15 @@ body {
         align-items: center;
     }
 
-    .column-chat, .column-matches, .column-sponsors {
+    .column-chat, .column-matches {
         width: 100%;
         flex: none;
         max-width: 600px;
     }
 
-    /* Reorder for mobile: Schedule first, then Chat, then Sponsors */
+    /* Reorder for mobile: Schedule first, then Chat */
     .column-matches { order: 1; }
     .column-chat { order: 2; }
-    .column-sponsors { order: 3; }
 }
 
 @keyframes fadeIn {
