@@ -30,14 +30,6 @@
             <a href="index.html" class="logo-link">
                 <img src="./photos/nfs.png" alt="NEEDFORSTREAM">
             </a>
-            <ul class="navbar-links">
-                <li><a href="index.html">Home</a></li>
-            </ul>
-            <div class="navbar-toggle" onclick="toggleNavbar()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
@@ -141,14 +133,6 @@
         const now = new Date();
         const formattedDate = `📅 ${greekDays[now.getDay()]} ${now.getDate()} ${greekMonths[now.getMonth()]}`;
         document.getElementById('greek-date').textContent = formattedDate;
-
-        // --- Navbar Logic ---
-        function toggleNavbar() {
-            const navbarLinks = document.querySelector('.navbar-links');
-            const toggleBtn = document.querySelector('.navbar-toggle');
-            navbarLinks.classList.toggle('active');
-            toggleBtn.classList.toggle('open');
-        }
 
         // --- Iframe Logic ---
         function setupIframes() {
